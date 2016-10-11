@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CheckSumClass</class>
+ <widget class="QMainWindow" name="CheckSumClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>892</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>微软雅黑</family>
+    <pointsize>11</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>CheckSum</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QTableView{
+	alternate-background-color:rgb(221, 238, 255);
+}
+/*
+QTableView::item::hover{
+	background-color:red;
+	font-weight:bold;
+	color:red;
+}*/</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QSplitter" name="splitter">
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QWidget" name="widget_Left" native="true">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QTreeView" name="treeView_explorer">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>11</pointsize>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::StrongFocus</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_refresh">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>11</pointsize>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::StrongFocus</enum>
+          </property>
+          <property name="text">
+           <string>Refresh</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_Right">
+        <item row="0" column="2">
+         <widget class="QLineEdit" name="lineEdit_fileName">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>11</pointsize>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::StrongFocus</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" rowspan="6">
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QWidget" name="widget_icon" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">#widget_icon{
+border:2px dashed;
+}</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_2">
+             <item row="0" column="0">
+              <widget class="QWidget" name="widget_BigIcon" native="true">
+               <property name="font">
+                <font>
+                 <pointsize>11</pointsize>
+                </font>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_3">
+                <item row="0" column="0">
+                 <widget class="MoveLabel" name="label_NoIcon">
+                  <property name="font">
+                   <font>
+                    <pointsize>11</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>&lt;font size=&quot;5&quot;&gt;No Icon&lt;/font&gt;</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_add">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>11</pointsize>
+              <kerning>true</kerning>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+            <property name="text">
+             <string>Add &gt;&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_2">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_delete">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>11</pointsize>
+              <kerning>true</kerning>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+            <property name="text">
+             <string>&lt;&lt;  Delete</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_3">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_deleteAll">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>11</pointsize>
+              <kerning>true</kerning>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+            <property name="text">
+             <string>&lt;&lt; Delete All</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_4">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_hideShowLeft">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>11</pointsize>
+              <kerning>true</kerning>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+            <property name="text">
+             <string>&gt;&gt;&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_5">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="3" rowspan="2">
+         <widget class="MoveLabel" name="label_Percent">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>11</pointsize>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string>Completed: 0/0</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1" colspan="3">
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QPushButton" name="pushButton_refreshAll">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>11</pointsize>
+              <kerning>true</kerning>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+            <property name="text">
+             <string>Refresh All</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_refreshSelected">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>11</pointsize>
+              <kerning>true</kerning>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+            <property name="text">
+             <string>Refresh Selected</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_exit">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>11</pointsize>
+              <kerning>true</kerning>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+            <property name="text">
+             <string>Exit</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLineEdit" name="lineEdit_MD5">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>11</pointsize>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::StrongFocus</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1" colspan="3">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="MoveLabel" name="label_3">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>11</pointsize>
+              <kerning>true</kerning>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+            <property name="text">
+             <string>CheckSum:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_checkSum">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>11</pointsize>
+              <kerning>true</kerning>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="MoveLabel" name="label_4">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>11</pointsize>
+              <kerning>true</kerning>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+            <property name="text">
+             <string>CRC32:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_CRC32">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>11</pointsize>
+              <kerning>true</kerning>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="MoveLabel" name="label_6">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>11</pointsize>
+              <kerning>true</kerning>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+            <property name="text">
+             <string>Size:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_Size">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>11</pointsize>
+              <kerning>true</kerning>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="checkBox_autoWidth">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>AutoWidth</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="1">
+         <widget class="MoveLabel" name="label_2">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>11</pointsize>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::StrongFocus</enum>
+          </property>
+          <property name="text">
+           <string>MD5:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2" colspan="2">
+         <widget class="QLineEdit" name="lineEdit_SHA1">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>11</pointsize>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::StrongFocus</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="MoveLabel" name="label">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>11</pointsize>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::StrongFocus</enum>
+          </property>
+          <property name="text">
+           <string>FileName:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1" colspan="3">
+         <widget class="QTableView" name="tableView_records">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>11</pointsize>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::StrongFocus</enum>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="tabKeyNavigation">
+           <bool>false</bool>
+          </property>
+          <attribute name="horizontalHeaderMinimumSectionSize">
+           <number>30</number>
+          </attribute>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="MoveLabel" name="label_5">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>11</pointsize>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::StrongFocus</enum>
+          </property>
+          <property name="text">
+           <string>SHA1:</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>MoveLabel</class>
+   <extends>QLabel</extends>
+   <header>MoveLabel.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>lineEdit_fileName</tabstop>
+  <tabstop>lineEdit_MD5</tabstop>
+  <tabstop>lineEdit_SHA1</tabstop>
+  <tabstop>lineEdit_checkSum</tabstop>
+  <tabstop>lineEdit_CRC32</tabstop>
+  <tabstop>lineEdit_Size</tabstop>
+  <tabstop>tableView_records</tabstop>
+  <tabstop>pushButton_refreshAll</tabstop>
+  <tabstop>pushButton_refreshSelected</tabstop>
+  <tabstop>pushButton_exit</tabstop>
+  <tabstop>treeView_explorer</tabstop>
+  <tabstop>pushButton_refresh</tabstop>
+  <tabstop>pushButton_add</tabstop>
+  <tabstop>pushButton_delete</tabstop>
+  <tabstop>pushButton_deleteAll</tabstop>
+  <tabstop>pushButton_hideShowLeft</tabstop>
+ </tabstops>
+ <resources>
+  <include location="checksum.qrc"/>
+ </resources>
+ <connections/>
+</ui>
