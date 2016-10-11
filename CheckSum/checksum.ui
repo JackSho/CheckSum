@@ -36,6 +36,7 @@ QTableView::item::hover{
      <widget class="QSplitter" name="splitter">
       <property name="font">
        <font>
+        <family>微软雅黑</family>
         <pointsize>11</pointsize>
        </font>
       </property>
@@ -45,6 +46,7 @@ QTableView::item::hover{
       <widget class="QWidget" name="widget_Left" native="true">
        <property name="font">
         <font>
+         <family>微软雅黑</family>
          <pointsize>11</pointsize>
         </font>
        </property>
@@ -85,6 +87,7 @@ QTableView::item::hover{
       <widget class="QWidget" name="layoutWidget">
        <property name="font">
         <font>
+         <family>微软雅黑</family>
          <pointsize>11</pointsize>
         </font>
        </property>
@@ -115,6 +118,7 @@ QTableView::item::hover{
             </property>
             <property name="font">
              <font>
+              <family>微软雅黑</family>
               <pointsize>11</pointsize>
              </font>
             </property>
@@ -128,6 +132,7 @@ border:2px dashed;
               <widget class="QWidget" name="widget_BigIcon" native="true">
                <property name="font">
                 <font>
+                 <family>微软雅黑</family>
                  <pointsize>11</pointsize>
                 </font>
                </property>
@@ -136,6 +141,7 @@ border:2px dashed;
                  <widget class="MoveLabel" name="label_NoIcon">
                   <property name="font">
                    <font>
+                    <family>微软雅黑</family>
                     <pointsize>11</pointsize>
                    </font>
                   </property>
@@ -174,6 +180,7 @@ border:2px dashed;
            <spacer name="verticalSpacer_2">
             <property name="font">
              <font>
+              <family>微软雅黑</family>
               <pointsize>11</pointsize>
              </font>
             </property>
@@ -209,6 +216,7 @@ border:2px dashed;
            <spacer name="verticalSpacer_3">
             <property name="font">
              <font>
+              <family>微软雅黑</family>
               <pointsize>11</pointsize>
              </font>
             </property>
@@ -244,6 +252,7 @@ border:2px dashed;
            <spacer name="verticalSpacer_4">
             <property name="font">
              <font>
+              <family>微软雅黑</family>
               <pointsize>11</pointsize>
              </font>
             </property>
@@ -279,6 +288,7 @@ border:2px dashed;
            <spacer name="verticalSpacer_5">
             <property name="font">
              <font>
+              <family>微软雅黑</family>
               <pointsize>11</pointsize>
              </font>
             </property>
@@ -477,6 +487,7 @@ border:2px dashed;
            <widget class="QCheckBox" name="checkBox_autoWidth">
             <property name="font">
              <font>
+              <family>微软雅黑</family>
               <pointsize>11</pointsize>
              </font>
             </property>
