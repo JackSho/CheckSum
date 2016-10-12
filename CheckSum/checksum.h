@@ -37,9 +37,13 @@ private:
 	QStandardItemModel *tableRecord;
 	QMap<QString,FileCheckSum> mapRecords;
 	CalculateTaskManager calcManager;
-	QMenu *rightMenu;
+	QMenu *tableRecordsRightMenu;
+	QMenu *dirViewRightMenu;
 	QAction *actOpenFileLocation;
 	QAction *actOpenFile;
+	QAction *actAddChildFiles;
+	QAction *actAddAllChildFiles;
+	QAction *actAddThisFile;
 	QPoint relativePos; // store relative position 
 	bool press;
 
@@ -61,6 +65,7 @@ private:
 	void DestoryMenuActions();
 
 	bool OpenFolderAndSelectFile(const char *filePath);
+	void AddDirChildFiles(QString path,bool recursive);
     
 #ifdef  Q_OS_MAC
     
@@ -87,6 +92,10 @@ private:
 		void slot_Completed();
 		void slot_ShowToolTip(const QModelIndex &index);
 		
+		void slot_ActionAddThisFileTriggered(bool checked = false);
+		void slot_ActionAddChildFilesTriggered(bool checked = false);
+		void slot_ActionAddAllChildFilesTriggered(bool checked = false);
+
 		void slot_ActionOpenFileLocationTriggered(bool checked = false);
 		void slot_ActionOpenFileTriggered(bool checked = false);
 	public slots:

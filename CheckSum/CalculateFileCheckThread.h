@@ -15,6 +15,15 @@ struct FileCheckSum
 	bool bOK;
 	QIcon icon;
 
+	void ClearData()
+	{
+        md5 = "";
+        checkSum = "";
+        crc32 = "";
+        sha1 = "";
+        bOK = false;
+	}
+
 	FileCheckSum()
 	{
 		md5 = "";
@@ -26,12 +35,9 @@ struct FileCheckSum
 	FileCheckSum(const QFileInfo &newFileInfo)
 	{
 #ifdef Q_OS_WIN
-        
         this->FileCheckSum::FileCheckSum();
         fileInfo = newFileInfo;
-
 #else
-        
         md5 = "";
         checkSum = "";
         crc32 = "";
@@ -42,20 +48,15 @@ struct FileCheckSum
     };
 	FileCheckSum(const QString &filePath)
 	{
-        
 #ifdef Q_OS_WIN
-        
         this->FileCheckSum::FileCheckSum(QFileInfo(filePath));
-        
 #else
-        
         md5 = "";
         checkSum = "";
         crc32 = "";
         sha1 = "";
         bOK = false;
         fileInfo = QFileInfo(filePath);
-        
 #endif
 		//new (this)FileCheckSum(QFileInfo(filePath));//这样写也可以
 		//FileCheckSum(QFileInfo(filePath));//直接调用另一个构造函数会编译不通过

@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_CheckSum_t {
-    QByteArrayData data[28];
-    char stringdata[480];
+    QByteArrayData data[31];
+    char stringdata[583];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -53,10 +53,13 @@ QT_MOC_LITERAL(20, 332, 12),
 QT_MOC_LITERAL(21, 345, 12),
 QT_MOC_LITERAL(22, 358, 14),
 QT_MOC_LITERAL(23, 373, 16),
-QT_MOC_LITERAL(24, 390, 36),
-QT_MOC_LITERAL(25, 427, 28),
-QT_MOC_LITERAL(26, 456, 14),
-QT_MOC_LITERAL(27, 471, 7)
+QT_MOC_LITERAL(24, 390, 31),
+QT_MOC_LITERAL(25, 422, 33),
+QT_MOC_LITERAL(26, 456, 36),
+QT_MOC_LITERAL(27, 493, 36),
+QT_MOC_LITERAL(28, 530, 28),
+QT_MOC_LITERAL(29, 559, 14),
+QT_MOC_LITERAL(30, 574, 7)
     },
     "CheckSum\0slot_AutoWidthStateChanged\0"
     "\0state\0slot_RefreshExplorer\0checked\0"
@@ -68,7 +71,10 @@ QT_MOC_LITERAL(27, 471, 7)
     "slot_CurrentRowChanged\0current\0previous\0"
     "slot_CalculateSuccess\0success\0"
     "FileCheckSum\0fileCheckSum\0slot_Completed\0"
-    "slot_ShowToolTip\0slot_ActionOpenFileLocationTriggered\0"
+    "slot_ShowToolTip\0slot_ActionAddThisFileTriggered\0"
+    "slot_ActionAddChildFilesTriggered\0"
+    "slot_ActionAddAllChildFilesTriggered\0"
+    "slot_ActionOpenFileLocationTriggered\0"
     "slot_ActionOpenFileTriggered\0"
     "receiveMessage\0message\0"
 };
@@ -80,7 +86,7 @@ static const uint qt_meta_data_CheckSum[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      27,   14, // methods
+      33,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -88,33 +94,39 @@ static const uint qt_meta_data_CheckSum[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,  149,    2, 0x08,
-       4,    1,  152,    2, 0x08,
-       4,    0,  155,    2, 0x28,
-       6,    1,  156,    2, 0x08,
-       6,    0,  159,    2, 0x28,
-       7,    1,  160,    2, 0x08,
-       7,    0,  163,    2, 0x28,
-       8,    1,  164,    2, 0x08,
-       8,    0,  167,    2, 0x28,
-       9,    1,  168,    2, 0x08,
-       9,    0,  171,    2, 0x28,
-      10,    1,  172,    2, 0x08,
-      10,    0,  175,    2, 0x28,
-      11,    1,  176,    2, 0x08,
-      11,    0,  179,    2, 0x28,
-      12,    1,  180,    2, 0x08,
-      14,    1,  183,    2, 0x08,
-      14,    0,  186,    2, 0x28,
-      15,    2,  187,    2, 0x08,
-      18,    2,  192,    2, 0x08,
-      22,    0,  197,    2, 0x08,
-      23,    1,  198,    2, 0x08,
-      24,    1,  201,    2, 0x08,
-      24,    0,  204,    2, 0x28,
-      25,    1,  205,    2, 0x08,
-      25,    0,  208,    2, 0x28,
-      26,    1,  209,    2, 0x0a,
+       1,    1,  179,    2, 0x08,
+       4,    1,  182,    2, 0x08,
+       4,    0,  185,    2, 0x28,
+       6,    1,  186,    2, 0x08,
+       6,    0,  189,    2, 0x28,
+       7,    1,  190,    2, 0x08,
+       7,    0,  193,    2, 0x28,
+       8,    1,  194,    2, 0x08,
+       8,    0,  197,    2, 0x28,
+       9,    1,  198,    2, 0x08,
+       9,    0,  201,    2, 0x28,
+      10,    1,  202,    2, 0x08,
+      10,    0,  205,    2, 0x28,
+      11,    1,  206,    2, 0x08,
+      11,    0,  209,    2, 0x28,
+      12,    1,  210,    2, 0x08,
+      14,    1,  213,    2, 0x08,
+      14,    0,  216,    2, 0x28,
+      15,    2,  217,    2, 0x08,
+      18,    2,  222,    2, 0x08,
+      22,    0,  227,    2, 0x08,
+      23,    1,  228,    2, 0x08,
+      24,    1,  231,    2, 0x08,
+      24,    0,  234,    2, 0x28,
+      25,    1,  235,    2, 0x08,
+      25,    0,  238,    2, 0x28,
+      26,    1,  239,    2, 0x08,
+      26,    0,  242,    2, 0x28,
+      27,    1,  243,    2, 0x08,
+      27,    0,  246,    2, 0x28,
+      28,    1,  247,    2, 0x08,
+      28,    0,  250,    2, 0x28,
+      29,    1,  251,    2, 0x0a,
 
  // slots: parameters
     QMetaType::Void, QMetaType::Int,    3,
@@ -143,7 +155,13 @@ static const uint qt_meta_data_CheckSum[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::Bool,    5,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   27,
+    QMetaType::Void, QMetaType::Bool,    5,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Bool,    5,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Bool,    5,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,   30,
 
        0        // eod
 };
@@ -175,11 +193,17 @@ void CheckSum::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 19: _t->slot_CalculateSuccess((*reinterpret_cast< const bool(*)>(_a[1])),(*reinterpret_cast< const FileCheckSum(*)>(_a[2]))); break;
         case 20: _t->slot_Completed(); break;
         case 21: _t->slot_ShowToolTip((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
-        case 22: _t->slot_ActionOpenFileLocationTriggered((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 23: _t->slot_ActionOpenFileLocationTriggered(); break;
-        case 24: _t->slot_ActionOpenFileTriggered((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 25: _t->slot_ActionOpenFileTriggered(); break;
-        case 26: _t->receiveMessage((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 22: _t->slot_ActionAddThisFileTriggered((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 23: _t->slot_ActionAddThisFileTriggered(); break;
+        case 24: _t->slot_ActionAddChildFilesTriggered((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 25: _t->slot_ActionAddChildFilesTriggered(); break;
+        case 26: _t->slot_ActionAddAllChildFilesTriggered((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 27: _t->slot_ActionAddAllChildFilesTriggered(); break;
+        case 28: _t->slot_ActionOpenFileLocationTriggered((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 29: _t->slot_ActionOpenFileLocationTriggered(); break;
+        case 30: _t->slot_ActionOpenFileTriggered((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 31: _t->slot_ActionOpenFileTriggered(); break;
+        case 32: _t->receiveMessage((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -210,13 +234,13 @@ int CheckSum::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 27)
+        if (_id < 33)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 27;
+        _id -= 33;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 27)
+        if (_id < 33)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 27;
+        _id -= 33;
     }
     return _id;
 }

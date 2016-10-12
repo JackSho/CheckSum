@@ -9,6 +9,7 @@
 #include <QMenu>
 #include <QDesktopServices>
 #include <QTextCodec>
+#include <QDir>
 
 #ifdef Q_OS_WIN
 
@@ -23,12 +24,18 @@
 #include "CalculateFileCheckThread.h"
 
 
-
-
-//#include "QtWindowsAero.h"
-
 CheckSum::CheckSum(QString initFileList, QWidget *parent)
-	: QMainWindow(parent),waitExit(false),iSelectedIndex(-1),press(false),rightMenu(NULL),actOpenFileLocation(NULL),actOpenFile(NULL)
+	: QMainWindow(parent),
+	waitExit(false),
+	iSelectedIndex(-1),
+	press(false),
+	dirViewRightMenu(NULL),
+	actAddThisFile(NULL),
+	actAddChildFiles(NULL),
+	actAddAllChildFiles(NULL),
+	tableRecordsRightMenu(NULL),
+	actOpenFileLocation(NULL),
+	actOpenFile(NULL)
 {
     ui.setupUi(this);
 
@@ -213,7 +220,8 @@ void CheckSum::slot_RefreshSelectedRecordList(bool checked)
 		QString filePath = tableRecord->item(rowIndex,CheckSum::FilePath)->text();
 		QFileInfo fileInfo(filePath);
 		tableRecord->setItem(rowIndex,CheckSum::FileName,new QStandardItem(fileInfo.fileName()));
-		mapRecords[filePath].bOK = false;
+		mapRecords[filePath].ClearData();
+		SetCheckSum(mapRecords[filePath],rowIndex,false);
 		calcManager.AddCalculateTask(filePath);
 		ui.pushButton_refreshSelected->setEnabled(false);
 	}
@@ -233,7 +241,8 @@ void CheckSum::slot_RefreshAllFromRecordList(bool checked)
 			QString filePath = tableRecord->item(rowIndex,CheckSum::FilePath)->text();
 			QFileInfo fileInfo(filePath);
 			tableRecord->setItem(rowIndex,CheckSum::FileName,new QStandardItem(fileInfo.fileName()));
-			mapRecords[filePath].bOK = false;
+			mapRecords[filePath].ClearData();
+			SetCheckSum(mapRecords[filePath],rowIndex,false);
 			calcManager.AddCalculateTask(filePath);
 			rowIndex ++;
 		}
@@ -289,7 +298,6 @@ void CheckSum::slot_DoubleClicked(const QModelIndex & index)
 
 void CheckSum::SetCheckSum(const FileCheckSum &fileCheckSum,int rowIndex,bool changeCurrent)
 {
-	QFileIconProvider fileIP;
 	ui.lineEdit_fileName->setText(fileCheckSum.fileInfo.fileName());
 	ui.lineEdit_MD5->setText("0x" + fileCheckSum.md5);
 	ui.lineEdit_checkSum->setText("0x" + fileCheckSum.checkSum);
@@ -337,7 +345,7 @@ void CheckSum::SetCheckSumNull()
 
 void CheckSum::dragEnterEvent(QDragEnterEvent *event)
 {
-#ifdef Q_DEBUG
+#ifdef QT_DEBUG
     QStringList formatList = event->mimeData()->formats();
     while(formatList.count())
     {
@@ -352,8 +360,8 @@ void CheckSum::dragEnterEvent(QDragEnterEvent *event)
 
 void CheckSum::dropEvent(QDropEvent *event)
 {
-#ifdef Q_DEBUG
-    qDebug() << "CheckSum::dropEvent enter."
+#ifdef QT_DEBUG
+    qDebug() << "CheckSum::dropEvent enter.";
 #endif
 
 	QList<QUrl> urls = event->mimeData()->urls();
@@ -363,7 +371,7 @@ void CheckSum::dropEvent(QDropEvent *event)
 		QUrl url = urls.at(i);
         QString path =url.toLocalFile();
         
-#ifdef Q_DEBUG
+#ifdef QT_DEBUG
         qDebug() <<QString("toLocalFile is %1").arg(url.toLocalFile());
         qDebug() <<QString("toDisplayString is %1").arg(url.toDisplayString());
         qDebug() <<QString("topLevelDomain is %1").arg(url.topLevelDomain());
@@ -395,9 +403,9 @@ void CheckSum::dropEvent(QDropEvent *event)
 
 void CheckSum::mousePressEvent(QMouseEvent *event)
 {
-#ifdef Q_DEBUG
+#ifdef QT_DEBUG
     
-    qDebug() << "CheckSum::mousePressEvent enter."
+    qDebug() << "CheckSum::mousePressEvent enter.";
     
 #endif
     
@@ -582,15 +590,44 @@ void CheckSum::SetTaskPercent()
 
 void CheckSum::contextMenuEvent(QContextMenuEvent *event)
 {
-	QPoint pt = ui.tableView_records->mapFromGlobal(QCursor::pos());
-	pt -= QPoint(ui.tableView_records->verticalHeader()->width(),ui.tableView_records->horizontalHeader()->height());
-	int rowIndex = ui.tableView_records->indexAt(pt).row();
-	//qDebug()<<QString("x is %1, y is %2, row is %3.").arg(pt.x()).arg(pt.y()).arg(ind.row());
-	if(rowIndex>-1)
+	if(ui.treeView_explorer->underMouse())
 	{
-		rightMenu->exec(QCursor::pos());
-		event->accept();
-		//event->ignore();
+		QModelIndex index = ui.treeView_explorer->currentIndex();
+		QFileInfo fileInfo = model->fileInfo(index);
+		if(fileInfo.isFile())
+		{	
+#ifdef QT_DEBUG
+			qDebug() << QString("%1 is File.").arg(fileInfo.filePath());
+#endif // QT_DEBUG
+
+			dirViewRightMenu->addAction(actAddThisFile);
+			dirViewRightMenu->exec(QCursor::pos());
+			event->accept();
+		}
+		else if(fileInfo.isDir())
+		{
+#ifdef QT_DEBUG
+			qDebug() << QString("%1 is Directory.").arg(fileInfo.filePath());
+#endif // QT_DEBUG
+			dirViewRightMenu->addAction(actAddChildFiles);
+			dirViewRightMenu->addAction(actAddAllChildFiles);
+			dirViewRightMenu->exec(QCursor::pos());
+			event->accept();
+		}
+		dirViewRightMenu->clear();
+	}
+	else if(ui.tableView_records->underMouse())
+	{
+		//QPoint pt = ui.tableView_records->mapFromGlobal(QCursor::pos());
+		//pt -= QPoint(ui.tableView_records->verticalHeader()->width(),ui.tableView_records->horizontalHeader()->height());
+		//int rowIndex = ui.tableView_records->indexAt(pt).row();
+		int rowIndex = ui.tableView_records->currentIndex().row();
+		if(rowIndex>-1)
+		{
+			tableRecordsRightMenu->exec(QCursor::pos());
+			event->accept();
+			//event->ignore();
+		}
 	}
 }
 
@@ -619,24 +656,50 @@ void CheckSum::UpdateRefreshAllEnable()
 
 void CheckSum::CreateMenuActions()
 {
-	rightMenu = new QMenu(this);
-    
+	actAddThisFile = new QAction("Add This File",this);
+	actAddChildFiles = new QAction("Add Child Files",this);	
+	actAddAllChildFiles = new QAction("Add All Child Files",this);
+    connect(actAddThisFile, SIGNAL(triggered(bool)), this, SLOT(slot_ActionAddThisFileTriggered(bool)));
+    connect(actAddChildFiles, SIGNAL(triggered(bool)), this, SLOT(slot_ActionAddChildFilesTriggered(bool)));
+    connect(actAddAllChildFiles, SIGNAL(triggered(bool)), this, SLOT(slot_ActionAddAllChildFilesTriggered(bool)));
+	dirViewRightMenu = new QMenu(this);
+	//dirViewRightMenu->addAction(actAddThisFile);
+	//dirViewRightMenu->addAction(actAddChildFiles);
+	//dirViewRightMenu->addAction(actAddAllChildFiles);
+	
+	tableRecordsRightMenu = new QMenu(this);
+
 #ifdef Q_OS_WIN
     
     actOpenFileLocation = new QAction("Open file location",this);
     connect(actOpenFileLocation, SIGNAL(triggered(bool)), this, SLOT(slot_ActionOpenFileLocationTriggered(bool)));
-    rightMenu->addAction(actOpenFileLocation);
+    tableRecordsRightMenu->addAction(actOpenFileLocation);
     
 #endif
     
 	actOpenFile = new QAction("Open file",this);
-
 	connect(actOpenFile, SIGNAL(triggered(bool)), this, SLOT(slot_ActionOpenFileTriggered(bool)));
-	rightMenu->addAction(actOpenFile);
+	tableRecordsRightMenu->addAction(actOpenFile);
 }
 
 void CheckSum::DestoryMenuActions()
 {
+	if(actAddThisFile)
+	{
+		delete (actAddThisFile);
+	}
+	if(actAddChildFiles)
+	{
+		delete (actAddChildFiles);
+	}
+	if(actAddAllChildFiles)
+	{
+		delete (actAddAllChildFiles);
+	}
+	if(dirViewRightMenu)
+	{
+		delete (dirViewRightMenu);
+	}
 	if(actOpenFileLocation)
 	{
 		delete (actOpenFileLocation);
@@ -645,9 +708,72 @@ void CheckSum::DestoryMenuActions()
 	{
 		delete (actOpenFile);
 	}
-	if(rightMenu)
+	if(tableRecordsRightMenu)
 	{
-		delete (rightMenu);
+		delete (tableRecordsRightMenu);
+	}
+}
+
+void CheckSum::slot_ActionAddThisFileTriggered(bool checked)
+{
+	slot_AddToRecordList(checked);
+}
+
+void CheckSum::AddDirChildFiles(QString path,bool recursive)
+{
+	QDir dir(path);
+	if(dir.exists())
+	{
+		dir.setFilter(QDir::Dirs|QDir::Files);
+		dir.setSorting(QDir::DirsFirst);
+		QFileInfoList list = dir.entryInfoList();
+		int i=0;
+		do{
+			QFileInfo fileInfo = list.at(i);
+			if(fileInfo.fileName()=="." || fileInfo.fileName()=="..")
+			{
+				i++;
+				continue;
+			}
+			if(fileInfo.isDir())
+			{
+				if(recursive)
+				{
+					AddDirChildFiles(fileInfo.filePath(),recursive);
+				}
+			}
+			else if(fileInfo.isFile())
+			{
+				if(!mapRecords.contains(fileInfo.filePath()))
+				{
+					FileCheckSum fileCheckSum(fileInfo);
+					SetCheckSum(fileCheckSum,-1,false);
+					calcManager.AddCalculateTask(fileCheckSum);
+				}
+			}
+			i++;
+		}
+		while(i<list.size());
+	}
+}
+
+void CheckSum::slot_ActionAddChildFilesTriggered(bool checked)
+{
+	QModelIndex index = ui.treeView_explorer->currentIndex();
+	QFileInfo fileInfo = model->fileInfo(index);
+	if(fileInfo.isDir())
+	{
+		AddDirChildFiles(fileInfo.filePath(),false);
+	}
+}
+
+void CheckSum::slot_ActionAddAllChildFilesTriggered(bool checked)
+{
+	QModelIndex index = ui.treeView_explorer->currentIndex();
+	QFileInfo fileInfo = model->fileInfo(index);
+	if(fileInfo.isDir())
+	{
+		AddDirChildFiles(fileInfo.filePath(),true);
 	}
 }
 
