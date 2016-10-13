@@ -1,10 +1,22 @@
 #!/bin/sh
 
+echo "arg num is $#"
+echo "arg0 is $0"
+echo "arg1 is $1"
+TRAGEFULLPATH=$1
 EXECTABLENAME=CheckSum.app
-
 EXECTABLEFULLDIR=./Debug/${EXECTABLENAME}/Contents/MacOS
-TRAGEFULLPATH=${EXECTABLEFULLDIR}/CheckSum
-TARGELIBFULLDIR=${EXECTABLEFULLDIR}/lib
+
+
+echo "finish !! finish !! finish!!${TARGELIBFULLDIR}"
+echo "${TARGELIBFULLDIR}"
+TARGELIBFULLDIR=${TRAGEFULLPATH}/Contents/MacOS/lib
+
+if [ ! -d "${TARGELIBFULLDIR}" ]
+then
+mkdir "${TARGELIBFULLDIR}"
+fi
+
 
 LIBQTORIGALINSTALLPATH=/usr/local/Qt-5.2.1/lib/
 

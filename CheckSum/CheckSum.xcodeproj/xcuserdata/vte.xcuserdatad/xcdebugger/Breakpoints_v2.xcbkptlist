@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "352"
             endingLineNumber = "352"
-            landmarkName = "CheckSum::dropEvent(QDropEvent *event)"
+            landmarkName = "CheckSum::dragEnterEvent(QDragEnterEvent *event)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -47,7 +47,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "667"
             endingLineNumber = "667"
-            landmarkName = "CheckSum::UpdateBigIcon(QIcon icon)"
+            landmarkName = "CheckSum::CreateMenuActions()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
