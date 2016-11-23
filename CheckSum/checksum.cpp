@@ -554,8 +554,9 @@ void CheckSum::slot_ShowToolTip(const QModelIndex &index)
 		return;
 	FileCheckSum fileCheckSum = mapRecords[filePath];
 	QString toopTip = "File: " + filePath + 
-		"\nMd5: 0x" + fileCheckSum.md5 + 
 		"\nCheckSum: 0x" + fileCheckSum.checkSum + 
+		"\nMd5: 0x" + fileCheckSum.md5 + 
+		"\nSHA1: 0x" + fileCheckSum.sha1 +
 		"\nSize: " + QString("%L1").arg(fileCheckSum.fileInfo.size()) + " Bytes";
 
 	QToolTip::showText(QCursor::pos(), toopTip); 
