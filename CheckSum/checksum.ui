@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>892</width>
+    <width>931</width>
     <height>600</height>
    </rect>
   </property>
@@ -36,8 +36,10 @@ QTableView::item::hover{
      <widget class="QSplitter" name="splitter">
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>Arial</family>
         <pointsize>11</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
        </font>
       </property>
       <property name="orientation">
@@ -46,8 +48,10 @@ QTableView::item::hover{
       <widget class="QWidget" name="widget_Left" native="true">
        <property name="font">
         <font>
-         <family>微软雅黑</family>
+         <family>Arial</family>
          <pointsize>11</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
         </font>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -55,8 +59,10 @@ QTableView::item::hover{
          <widget class="QTreeView" name="treeView_explorer">
           <property name="font">
            <font>
-            <family>微软雅黑</family>
+            <family>Arial</family>
             <pointsize>11</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
             <kerning>true</kerning>
            </font>
           </property>
@@ -69,8 +75,10 @@ QTableView::item::hover{
          <widget class="QPushButton" name="pushButton_refresh">
           <property name="font">
            <font>
-            <family>微软雅黑</family>
+            <family>Arial</family>
             <pointsize>11</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
             <kerning>true</kerning>
            </font>
           </property>
@@ -87,8 +95,10 @@ QTableView::item::hover{
       <widget class="QWidget" name="layoutWidget">
        <property name="font">
         <font>
-         <family>微软雅黑</family>
+         <family>Arial</family>
          <pointsize>11</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
         </font>
        </property>
        <layout class="QGridLayout" name="gridLayout_Right">
@@ -96,8 +106,10 @@ QTableView::item::hover{
          <widget class="QLineEdit" name="lineEdit_fileName">
           <property name="font">
            <font>
-            <family>微软雅黑</family>
+            <family>Arial</family>
             <pointsize>11</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
             <kerning>true</kerning>
            </font>
           </property>
@@ -118,8 +130,10 @@ QTableView::item::hover{
             </property>
             <property name="font">
              <font>
-              <family>微软雅黑</family>
+              <family>Arial</family>
               <pointsize>11</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
              </font>
             </property>
             <property name="styleSheet">
@@ -132,8 +146,10 @@ border:2px dashed;
               <widget class="QWidget" name="widget_BigIcon" native="true">
                <property name="font">
                 <font>
-                 <family>微软雅黑</family>
+                 <family>Arial</family>
                  <pointsize>11</pointsize>
+                 <weight>50</weight>
+                 <bold>false</bold>
                 </font>
                </property>
                <layout class="QGridLayout" name="gridLayout_3">
@@ -141,8 +157,10 @@ border:2px dashed;
                  <widget class="MoveLabel" name="label_NoIcon">
                   <property name="font">
                    <font>
-                    <family>微软雅黑</family>
+                    <family>Arial</family>
                     <pointsize>11</pointsize>
+                    <weight>50</weight>
+                    <bold>false</bold>
                    </font>
                   </property>
                   <property name="text">
@@ -163,8 +181,10 @@ border:2px dashed;
            <widget class="QPushButton" name="pushButton_add">
             <property name="font">
              <font>
-              <family>微软雅黑</family>
+              <family>Arial</family>
               <pointsize>11</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
               <kerning>true</kerning>
              </font>
             </property>
@@ -180,8 +200,10 @@ border:2px dashed;
            <spacer name="verticalSpacer_2">
             <property name="font">
              <font>
-              <family>微软雅黑</family>
+              <family>Arial</family>
               <pointsize>11</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
              </font>
             </property>
             <property name="orientation">
@@ -199,8 +221,10 @@ border:2px dashed;
            <widget class="QPushButton" name="pushButton_delete">
             <property name="font">
              <font>
-              <family>微软雅黑</family>
+              <family>Arial</family>
               <pointsize>11</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
               <kerning>true</kerning>
              </font>
             </property>
@@ -216,8 +240,10 @@ border:2px dashed;
            <spacer name="verticalSpacer_3">
             <property name="font">
              <font>
-              <family>微软雅黑</family>
+              <family>Arial</family>
               <pointsize>11</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
              </font>
             </property>
             <property name="orientation">
@@ -235,8 +261,10 @@ border:2px dashed;
            <widget class="QPushButton" name="pushButton_deleteAll">
             <property name="font">
              <font>
-              <family>微软雅黑</family>
+              <family>Arial</family>
               <pointsize>11</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
               <kerning>true</kerning>
              </font>
             </property>
@@ -252,8 +280,10 @@ border:2px dashed;
            <spacer name="verticalSpacer_4">
             <property name="font">
              <font>
-              <family>微软雅黑</family>
+              <family>Arial</family>
               <pointsize>11</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
              </font>
             </property>
             <property name="orientation">
@@ -271,8 +301,10 @@ border:2px dashed;
            <widget class="QPushButton" name="pushButton_hideShowLeft">
             <property name="font">
              <font>
-              <family>微软雅黑</family>
+              <family>Arial</family>
               <pointsize>11</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
               <kerning>true</kerning>
              </font>
             </property>
@@ -288,8 +320,10 @@ border:2px dashed;
            <spacer name="verticalSpacer_5">
             <property name="font">
              <font>
-              <family>微软雅黑</family>
+              <family>Arial</family>
               <pointsize>11</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
              </font>
             </property>
             <property name="orientation">
@@ -309,8 +343,10 @@ border:2px dashed;
          <widget class="MoveLabel" name="label_Percent">
           <property name="font">
            <font>
-            <family>微软雅黑</family>
+            <family>Arial</family>
             <pointsize>11</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
             <kerning>true</kerning>
            </font>
           </property>
@@ -325,8 +361,10 @@ border:2px dashed;
            <widget class="QPushButton" name="pushButton_refreshAll">
             <property name="font">
              <font>
-              <family>微软雅黑</family>
+              <family>Arial</family>
               <pointsize>11</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
               <kerning>true</kerning>
              </font>
             </property>
@@ -342,8 +380,10 @@ border:2px dashed;
            <widget class="QPushButton" name="pushButton_refreshSelected">
             <property name="font">
              <font>
-              <family>微软雅黑</family>
+              <family>Arial</family>
               <pointsize>11</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
               <kerning>true</kerning>
              </font>
             </property>
@@ -359,8 +399,10 @@ border:2px dashed;
            <widget class="QPushButton" name="pushButton_exit">
             <property name="font">
              <font>
-              <family>微软雅黑</family>
+              <family>Arial</family>
               <pointsize>11</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
               <kerning>true</kerning>
              </font>
             </property>
@@ -378,8 +420,10 @@ border:2px dashed;
          <widget class="QLineEdit" name="lineEdit_MD5">
           <property name="font">
            <font>
-            <family>微软雅黑</family>
+            <family>Arial</family>
             <pointsize>11</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
             <kerning>true</kerning>
            </font>
           </property>
@@ -394,8 +438,10 @@ border:2px dashed;
            <widget class="MoveLabel" name="label_3">
             <property name="font">
              <font>
-              <family>微软雅黑</family>
+              <family>Arial</family>
               <pointsize>11</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
               <kerning>true</kerning>
              </font>
             </property>
@@ -411,8 +457,10 @@ border:2px dashed;
            <widget class="QLineEdit" name="lineEdit_checkSum">
             <property name="font">
              <font>
-              <family>微软雅黑</family>
+              <family>Arial</family>
               <pointsize>11</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
               <kerning>true</kerning>
              </font>
             </property>
@@ -425,8 +473,10 @@ border:2px dashed;
            <widget class="MoveLabel" name="label_4">
             <property name="font">
              <font>
-              <family>微软雅黑</family>
+              <family>Arial</family>
               <pointsize>11</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
               <kerning>true</kerning>
              </font>
             </property>
@@ -442,8 +492,10 @@ border:2px dashed;
            <widget class="QLineEdit" name="lineEdit_CRC32">
             <property name="font">
              <font>
-              <family>微软雅黑</family>
+              <family>Arial</family>
               <pointsize>11</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
               <kerning>true</kerning>
              </font>
             </property>
@@ -456,8 +508,10 @@ border:2px dashed;
            <widget class="MoveLabel" name="label_6">
             <property name="font">
              <font>
-              <family>微软雅黑</family>
+              <family>Arial</family>
               <pointsize>11</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
               <kerning>true</kerning>
              </font>
             </property>
@@ -473,8 +527,10 @@ border:2px dashed;
            <widget class="QLineEdit" name="lineEdit_Size">
             <property name="font">
              <font>
-              <family>微软雅黑</family>
+              <family>Arial</family>
               <pointsize>11</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
               <kerning>true</kerning>
              </font>
             </property>
@@ -487,12 +543,29 @@ border:2px dashed;
            <widget class="QCheckBox" name="checkBox_autoWidth">
             <property name="font">
              <font>
-              <family>微软雅黑</family>
+              <family>Arial</family>
               <pointsize>11</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
              </font>
             </property>
             <property name="text">
              <string>AutoWidth</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="checkBox_lower">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>11</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Lower</string>
             </property>
            </widget>
           </item>
@@ -502,8 +575,10 @@ border:2px dashed;
          <widget class="MoveLabel" name="label_2">
           <property name="font">
            <font>
-            <family>微软雅黑</family>
+            <family>Arial</family>
             <pointsize>11</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
             <kerning>true</kerning>
            </font>
           </property>
@@ -519,8 +594,10 @@ border:2px dashed;
          <widget class="QLineEdit" name="lineEdit_SHA1">
           <property name="font">
            <font>
-            <family>微软雅黑</family>
+            <family>Arial</family>
             <pointsize>11</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
             <kerning>true</kerning>
            </font>
           </property>
@@ -533,8 +610,10 @@ border:2px dashed;
          <widget class="MoveLabel" name="label">
           <property name="font">
            <font>
-            <family>微软雅黑</family>
+            <family>Arial</family>
             <pointsize>11</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
             <kerning>true</kerning>
            </font>
           </property>
@@ -550,8 +629,10 @@ border:2px dashed;
          <widget class="QTableView" name="tableView_records">
           <property name="font">
            <font>
-            <family>微软雅黑</family>
+            <family>Arial</family>
             <pointsize>11</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
             <kerning>true</kerning>
            </font>
           </property>
@@ -573,8 +654,10 @@ border:2px dashed;
          <widget class="MoveLabel" name="label_5">
           <property name="font">
            <font>
-            <family>微软雅黑</family>
+            <family>Arial</family>
             <pointsize>11</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
             <kerning>true</kerning>
            </font>
           </property>

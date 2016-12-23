@@ -5,6 +5,10 @@
 #include "checksum.h"
 #include "singleapplication.h"
 
+#ifndef QT_DLL
+#include <QtPlugin>
+#endif
+
 
 #if defined Q_OS_WIN32   //for win  
 #include <windows.h>  
@@ -56,6 +60,9 @@ bool checkOnly()
 #define SINGLEAPPUNIQUEKEY		"CheckSum Tool Single Application"
 int main(int argc, char *argv[])
 {
+#ifndef QT_DLL
+	Q_IMPORT_PLUGIN (QWindowsIntegrationPlugin);
+#endif
 	SingleApplication *sA = NULL;
     
 #ifdef Q_OS_WIN

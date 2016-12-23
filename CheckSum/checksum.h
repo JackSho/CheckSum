@@ -46,6 +46,7 @@ private:
 	QAction *actAddThisFile;
 	QPoint relativePos; // store relative position 
 	bool press;
+	bool currentLower;
 
 	int iSelectedIndex;
 	bool waitExit;//等待后台任务完成后退出
@@ -77,6 +78,7 @@ private:
 
 	private slots:
 		void slot_AutoWidthStateChanged(int state);
+		void slot_LowerStateChanged(int state);
 
 		void slot_RefreshExplorer(bool checked = false);
 		void slot_AddToRecordList(bool checked = false);

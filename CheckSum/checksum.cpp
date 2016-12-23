@@ -10,6 +10,7 @@
 #include <QDesktopServices>
 #include <QTextCodec>
 #include <QDir>
+#include <QProcess>
 
 #ifdef Q_OS_WIN
 
@@ -17,6 +18,13 @@
 #include <qt_windows.h>
 #include <ShlObj.h>
 #include <Windowsx.h >
+
+#endif
+
+#ifdef Q_OS_MAC
+
+#include <AppKit/NSWorkspace.h>
+#include <CoreServices/CoreServices.h>
 
 #endif
 
@@ -29,6 +37,7 @@ CheckSum::CheckSum(QString initFileList, QWidget *parent)
 	waitExit(false),
 	iSelectedIndex(-1),
 	press(false),
+	currentLower(false),
 	dirViewRightMenu(NULL),
 	actAddThisFile(NULL),
 	actAddChildFiles(NULL),
@@ -70,8 +79,9 @@ CheckSum::CheckSum(QString initFileList, QWidget *parent)
 	ui.widget_icon->layout()->setMargin(0);
 
 	ui.checkBox_autoWidth->setCheckState(Qt::Checked);
-
+	
 	connect(ui.checkBox_autoWidth,SIGNAL(stateChanged(int)),this,SLOT(slot_AutoWidthStateChanged(int)));
+	connect(ui.checkBox_lower,SIGNAL(stateChanged(int)),this,SLOT(slot_LowerStateChanged(int)));
 
 	connect(ui.treeView_explorer,SIGNAL(doubleClicked(const QModelIndex &)),SLOT(slot_DoubleClicked(const QModelIndex &)),Qt::DirectConnection);
 	connect(ui.pushButton_refresh,SIGNAL(clicked(bool)),SLOT(slot_RefreshExplorer(bool)),Qt::DirectConnection);
@@ -163,6 +173,12 @@ CheckSum::~CheckSum()
 void CheckSum::slot_AutoWidthStateChanged(int state)
 {
 	ui.tableView_records->horizontalHeader()->setSectionResizeMode(state == Qt::Checked ? QHeaderView::ResizeToContents : QHeaderView::Interactive);
+}
+
+void CheckSum::slot_LowerStateChanged(int state)
+{
+	currentLower = (state == Qt::Checked);
+
 }
 
 void CheckSum::slot_RefreshExplorer(bool checked)
@@ -299,10 +315,10 @@ void CheckSum::slot_DoubleClicked(const QModelIndex & index)
 void CheckSum::SetCheckSum(const FileCheckSum &fileCheckSum,int rowIndex,bool changeCurrent)
 {
 	ui.lineEdit_fileName->setText(fileCheckSum.fileInfo.fileName());
-	ui.lineEdit_MD5->setText("0x" + fileCheckSum.md5);
-	ui.lineEdit_checkSum->setText("0x" + fileCheckSum.checkSum);
-	ui.lineEdit_CRC32->setText("0x" + fileCheckSum.crc32);
-	ui.lineEdit_SHA1->setText("0x" + fileCheckSum.sha1);
+	ui.lineEdit_MD5->setText("0x" + (currentLower ? fileCheckSum.md5.toLower() : fileCheckSum.md5.toUpper()));
+	ui.lineEdit_checkSum->setText("0x" + (currentLower ? fileCheckSum.checkSum.toLower() : fileCheckSum.checkSum));
+	ui.lineEdit_CRC32->setText("0x" + (currentLower ? fileCheckSum.crc32.toLower() : fileCheckSum.crc32));
+	ui.lineEdit_SHA1->setText("0x" + (currentLower ? fileCheckSum.sha1.toLower() : fileCheckSum.sha1));
 	ui.lineEdit_Size->setText(QString("%L1").arg(fileCheckSum.fileInfo.size()) + " Bytes");
 	
 	int rowCount = tableRecord->rowCount();
@@ -369,6 +385,33 @@ void CheckSum::dropEvent(QDropEvent *event)
 	for(int i=0;i<urls.count();i++)
 	{
 		QUrl url = urls.at(i);
+        
+#ifdef  Q_OS_MAC
+      
+        SInt32 macVersionMajor;
+        SInt32 macVersionMinor;
+        bool needConvertFileUrl = false;
+        
+        if ((Gestalt(gestaltSystemVersionMajor, &macVersionMajor) == noErr) && (Gestalt(gestaltSystemVersionMinor, &macVersionMinor) == noErr))
+        {
+            
+#ifdef QT_DEBUG
+            qDebug() << QString("CheckSum::dropEvent enter. macVersionMajor = %1, macVersionMinor = %2").arg(macVersionMajor).arg(macVersionMinor);
+#endif
+            ///System/Library/CoreServices/SystemVersion.plist  Could look here, but this is easier.
+            if (macVersionMajor >= 10 && macVersionMinor >= 10) // need at least v10.10.0 of Mac OS X
+            {
+                needConvertFileUrl = true;
+            }
+        }
+        if(needConvertFileUrl)
+        {
+            LeawoQUrlToCFURLRef(url);
+        }
+
+        
+#endif
+        
         QString path =url.toLocalFile();
         
 #ifdef QT_DEBUG
@@ -670,13 +713,13 @@ void CheckSum::CreateMenuActions()
 	
 	tableRecordsRightMenu = new QMenu(this);
 
-#ifdef Q_OS_WIN
+//#ifdef Q_OS_WIN
     
     actOpenFileLocation = new QAction("Open file location",this);
     connect(actOpenFileLocation, SIGNAL(triggered(bool)), this, SLOT(slot_ActionOpenFileLocationTriggered(bool)));
     tableRecordsRightMenu->addAction(actOpenFileLocation);
     
-#endif
+//#endif
     
 	actOpenFile = new QAction("Open file",this);
 	connect(actOpenFile, SIGNAL(triggered(bool)), this, SLOT(slot_ActionOpenFileTriggered(bool)));
@@ -829,14 +872,12 @@ void CheckSum::UpdateBigIcon(QIcon icon)
 
 #ifdef  Q_OS_MAC
 
-void LeawoQUrlToCFURLRef(QUrl &resUrl)
+void CheckSum::LeawoQUrlToCFURLRef(QUrl &resUrl)
 {
     QByteArray filePath = resUrl.toEncoded();
     if ( filePath.startsWith("file:///.file/id=") )
     {
- /*       CFStringRef pathStr =CFStringCreateWithCString(kCFAllocatorDefault
-                                                       , filePath.data()
-                                                       ,kCFStringEncodingUTF8);
+        CFStringRef pathStr =CFStringCreateWithCString(kCFAllocatorDefault, filePath.data() ,kCFStringEncodingUTF8);
         //for CFURLCreateFilePathURL create temp URL, tempUrl = "file:///.file/id="
         CFURLRef tempUrl =CFURLCreateWithString(kCFAllocatorDefault, pathStr,NULL);
         //convert tempUrl to system file path
@@ -851,7 +892,7 @@ void LeawoQUrlToCFURLRef(QUrl &resUrl)
         //        memset(str, 0, sizeof(char)*(length + 1));
         CFStringGetCString(tempStr, str, maxSize,kCFStringEncodingUTF8);
         resUrl = QUrl(str);
- */   }
+    }
 }
 
 #endif
@@ -936,7 +977,14 @@ bool CheckSum::OpenFolderAndSelectFile(const char *filePath)
     return TRUE;
 
 #else
-    
+    QString pathIn(filePath);
+    QStringList scriptArgs;
+    scriptArgs << QLatin1String("-e") << QString::fromLatin1("tell application \"Finder\" to reveal POSIX file \"%1\"").arg(pathIn);
+    QProcess::execute(QLatin1String("/usr/bin/osascript"), scriptArgs);
+    scriptArgs.clear();
+    scriptArgs << QLatin1String("-e") << QLatin1String("tell application \"Finder\" to activate");
+    QProcess::execute("/usr/bin/osascript", scriptArgs);
+    return true;
 #endif
 }
 
