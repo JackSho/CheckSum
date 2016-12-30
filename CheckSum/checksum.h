@@ -37,13 +37,14 @@ private:
 	QStandardItemModel *tableRecord;
 	QMap<QString,FileCheckSum> mapRecords;
 	CalculateTaskManager calcManager;
-	QMenu *tableRecordsRightMenu;
-	QMenu *dirViewRightMenu;
-	QAction *actOpenFileLocation;
-	QAction *actOpenFile;
-	QAction *actAddChildFiles;
-	QAction *actAddAllChildFiles;
-	QAction *actAddThisFile;
+	QMenu *tableRecordsRightMenu;//计算结果列表右键菜单
+	QMenu *dirViewRightMenu;//文件查看器右键菜单
+	QAction *actOpenFileLocation;//打开文件位置
+	QAction *actOpenFile;//打开文件
+	QAction *actDeleteSelectedFiles;//删除选中文件
+	QAction *actAddChildFiles;//添加目录下的文件
+	QAction *actAddAllChildFiles;//递归此目录下的所有文件
+	QAction *actAddThisFile;//添加此文件
 	QPoint relativePos; // store relative position 
 	bool press;
 	bool currentLower;
@@ -100,6 +101,8 @@ private:
 
 		void slot_ActionOpenFileLocationTriggered(bool checked = false);
 		void slot_ActionOpenFileTriggered(bool checked = false);
+		void slot_ActionDeleteSelectedFilesTriggered(bool checked = false);
+
 	public slots:
 		void receiveMessage(QString message);
 

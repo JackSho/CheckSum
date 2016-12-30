@@ -44,7 +44,8 @@ CheckSum::CheckSum(QString initFileList, QWidget *parent)
 	actAddAllChildFiles(NULL),
 	tableRecordsRightMenu(NULL),
 	actOpenFileLocation(NULL),
-	actOpenFile(NULL)
+	actOpenFile(NULL),
+	actDeleteSelectedFiles(NULL)
 {
     ui.setupUi(this);
 
@@ -443,7 +444,6 @@ void CheckSum::dropEvent(QDropEvent *event)
 	return ;
 } 
 
-
 void CheckSum::mousePressEvent(QMouseEvent *event)
 {
 #ifdef QT_DEBUG
@@ -458,6 +458,7 @@ void CheckSum::mousePressEvent(QMouseEvent *event)
 		relativePos=this->pos()-event->globalPos();
 	}
 }
+
 void CheckSum::mouseMoveEvent(QMouseEvent *event)
 {
 	if(press)
@@ -707,23 +708,20 @@ void CheckSum::CreateMenuActions()
     connect(actAddChildFiles, SIGNAL(triggered(bool)), this, SLOT(slot_ActionAddChildFilesTriggered(bool)));
     connect(actAddAllChildFiles, SIGNAL(triggered(bool)), this, SLOT(slot_ActionAddAllChildFilesTriggered(bool)));
 	dirViewRightMenu = new QMenu(this);
-	//dirViewRightMenu->addAction(actAddThisFile);
-	//dirViewRightMenu->addAction(actAddChildFiles);
-	//dirViewRightMenu->addAction(actAddAllChildFiles);
 	
 	tableRecordsRightMenu = new QMenu(this);
 
-//#ifdef Q_OS_WIN
-    
     actOpenFileLocation = new QAction("Open file location",this);
     connect(actOpenFileLocation, SIGNAL(triggered(bool)), this, SLOT(slot_ActionOpenFileLocationTriggered(bool)));
     tableRecordsRightMenu->addAction(actOpenFileLocation);
     
-//#endif
-    
 	actOpenFile = new QAction("Open file",this);
 	connect(actOpenFile, SIGNAL(triggered(bool)), this, SLOT(slot_ActionOpenFileTriggered(bool)));
 	tableRecordsRightMenu->addAction(actOpenFile);
+
+	actDeleteSelectedFiles = new QAction("Delete file(s)",this);
+	connect(actDeleteSelectedFiles, SIGNAL(triggered(bool)), this, SLOT(slot_ActionDeleteSelectedFilesTriggered(bool)));
+	tableRecordsRightMenu->addAction(actDeleteSelectedFiles);
 }
 
 void CheckSum::DestoryMenuActions()
@@ -755,6 +753,10 @@ void CheckSum::DestoryMenuActions()
 	if(tableRecordsRightMenu)
 	{
 		delete (tableRecordsRightMenu);
+	}
+	if(actDeleteSelectedFiles)
+	{
+		delete (actDeleteSelectedFiles);
 	}
 }
 
@@ -844,6 +846,11 @@ void CheckSum::slot_ActionOpenFileTriggered(bool checked)
 		QString filePath = tableRecord->item(rowIndex,CheckSum::FilePath)->text();
 		QDesktopServices::openUrl(QUrl::fromLocalFile(filePath));
 	}
+}
+
+void CheckSum::slot_ActionDeleteSelectedFilesTriggered(bool checked)
+{
+	slot_DeleteFromRecordList(checked);
 }
 
 void CheckSum::UpdateBigIcon(QIcon icon)
