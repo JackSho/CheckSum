@@ -99,6 +99,8 @@
 		64146C52BA44DE82D9518B39 /* checksum.qrc */ = {isa = PBXFileReference; lastKnownFileType = text; path = checksum.qrc; sourceTree = "<absolute>"; };
 		6470B3A43B84FF2E90CE3323 /* CheckSum.pro */ = {isa = PBXFileReference; lastKnownFileType = text; path = CheckSum.pro; sourceTree = "<absolute>"; };
 		64EC597E08B55DA621B3032A /* /usr/local/Qt-5.2.1/mkspecs/modules/qt_lib_declarative.pri */ = {isa = PBXFileReference; lastKnownFileType = text; path = "/usr/local/Qt-5.2.1/mkspecs/modules/qt_lib_declarative.pri"; sourceTree = "<absolute>"; };
+		67251DFF1E1B464C0075D598 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		67251E011E1B4CC80075D598 /* MacIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MacIcon.icns; sourceTree = SOURCE_ROOT; };
 		6787000C1D95107500142E91 /* QtWidgets.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtWidgets.framework; path = "/usr/local/Qt-5.2.1/lib/QtWidgets.framework"; sourceTree = "<absolute>"; };
 		67B9F4C41DEE5FBA00F15C68 /* QtNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtNetwork.framework; path = "/usr/local/Qt-5.2.1/lib/QtNetwork.framework"; sourceTree = "<absolute>"; };
 		67DBD95D1DEDA93D00A5EC69 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -231,6 +233,7 @@
 				463CE76D923F87C9AE63A5B2 /* QtWindowsAero.h */,
 				E0768D34D6124C4CC6EF02E7 /* resource.h */,
 				A486B890FCFCBFA06F445AE3 /* singleapplication.h */,
+				67251DFF1E1B464C0075D598 /* Info.plist */,
 			);
 			name = Sources;
 			sourceTree = "<Group>";
@@ -353,6 +356,7 @@
 		E8C543AB96796ECAA2E65C57 /* CheckSum */ = {
 			isa = PBXGroup;
 			children = (
+				67251E011E1B4CC80075D598 /* MacIcon.icns */,
 				2EB56BE3C2D93CDAB0C52E67 /* Sources */,
 				25B08E2869634E9BCBA333A2 /* Generated Sources */,
 				74B182DB50CB5611B5C1C297 /* Supporting Files */,
@@ -634,6 +638,7 @@
 		6666AA5E688052234F6758D8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -653,6 +658,7 @@
 		77418F46922677BB04ED38DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (

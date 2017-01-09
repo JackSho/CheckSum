@@ -8,6 +8,7 @@
 #ifdef	Q_OS_WIN
 #ifndef QT_DLL
 #include <QtPlugin>
+Q_IMPORT_PLUGIN (QWindowsIntegrationPlugin);
 #endif
 #endif
 
@@ -62,11 +63,6 @@ bool checkOnly()
 #define SINGLEAPPUNIQUEKEY		"CheckSum Tool Single Application"
 int main(int argc, char *argv[])
 {
-#ifdef Q_OS_WIN
-#ifndef QT_DLL
-	Q_IMPORT_PLUGIN (QWindowsIntegrationPlugin);
-#endif
-#endif
 	SingleApplication *sA = NULL;
     
 #ifdef Q_OS_WIN

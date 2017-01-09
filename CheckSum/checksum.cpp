@@ -45,7 +45,8 @@ CheckSum::CheckSum(QString initFileList, QWidget *parent)
 	tableRecordsRightMenu(NULL),
 	actOpenFileLocation(NULL),
 	actOpenFile(NULL),
-	actDeleteSelectedFiles(NULL)
+	actDeleteSelectedFiles(NULL),
+	actRefreshSelectedFiles(NULL)
 {
     ui.setupUi(this);
 
@@ -515,6 +516,7 @@ void CheckSum::slot_CalculateSuccess(const bool &success,const FileCheckSum &fil
 			SetCheckSumNull();
 		}
 		mapRecords.remove(filePath);
+		SetTaskPercent();
 	}
 	UpdateRefreshAllEnable();
 }
@@ -597,11 +599,57 @@ void CheckSum::slot_ShowToolTip(const QModelIndex &index)
 	if(filePath.isEmpty())
 		return;
 	FileCheckSum fileCheckSum = mapRecords[filePath];
+	double size = fileCheckSum.fileInfo.size();
+	QString sizeUnit = "B";
+	double fileSize = fileCheckSum.fileInfo.size() / 1024.0;
+	if(fileSize >= 1.0)
+	{
+		sizeUnit = "KB";
+		size = fileSize;
+		fileSize = fileSize / 1024.0;
+		if(fileSize >= 1.0)
+		{
+			sizeUnit = "MB";
+			size = fileSize;
+			fileSize = fileSize / 1024.0;
+			if(fileSize >= 1.0)
+			{
+				sizeUnit = "GB";
+				size = fileSize;
+				fileSize = fileSize / 1024.0;
+				if(fileSize >= 1.0)
+				{
+					sizeUnit = "TB";
+					size = fileSize;
+					fileSize = fileSize / 1024.0;
+					if(fileSize >= 1.0)
+					{
+						sizeUnit = "PB";
+						size = fileSize;
+						fileSize = fileSize / 1024.0;
+						if(fileSize >= 1.0)
+						{
+							sizeUnit = "EB";
+							size = fileSize;
+							fileSize = fileSize / 1024.0;
+							if(fileSize >= 1.0)
+							{
+								sizeUnit = "ZB";
+								size = fileSize;
+								fileSize = fileSize / 1024.0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 	QString toopTip = "File: " + filePath + 
 		"\nCheckSum: 0x" + fileCheckSum.checkSum + 
 		"\nMd5: 0x" + fileCheckSum.md5 + 
 		"\nSHA1: 0x" + fileCheckSum.sha1 +
-		"\nSize: " + QString("%L1").arg(fileCheckSum.fileInfo.size()) + " Bytes";
+		"\nSize: " + QString("%1 %2").arg(QString::number(size,'f',2)).arg(sizeUnit);
+		//"\nSize: " + QString("%L1").arg(fileCheckSum.fileInfo.size()) + " Bytes";//以字节为单位，千分位表示文件大小(Size: 10 234 Bytes)
 
 	QToolTip::showText(QCursor::pos(), toopTip); 
 }
@@ -722,6 +770,10 @@ void CheckSum::CreateMenuActions()
 	actDeleteSelectedFiles = new QAction("Delete file(s)",this);
 	connect(actDeleteSelectedFiles, SIGNAL(triggered(bool)), this, SLOT(slot_ActionDeleteSelectedFilesTriggered(bool)));
 	tableRecordsRightMenu->addAction(actDeleteSelectedFiles);
+
+	actRefreshSelectedFiles = new QAction("Refresh file(s)",this);
+	connect(actRefreshSelectedFiles, SIGNAL(triggered(bool)), this, SLOT(slot_ActionRefreshSelectedFilesTriggered(bool)));
+	tableRecordsRightMenu->addAction(actRefreshSelectedFiles);
 }
 
 void CheckSum::DestoryMenuActions()
@@ -851,6 +903,11 @@ void CheckSum::slot_ActionOpenFileTriggered(bool checked)
 void CheckSum::slot_ActionDeleteSelectedFilesTriggered(bool checked)
 {
 	slot_DeleteFromRecordList(checked);
+}
+
+void CheckSum::slot_ActionRefreshSelectedFilesTriggered(bool checked)
+{
+	slot_RefreshSelectedRecordList(checked);
 }
 
 void CheckSum::UpdateBigIcon(QIcon icon)
