@@ -232,7 +232,7 @@ border:2px dashed;
              <enum>Qt::StrongFocus</enum>
             </property>
             <property name="text">
-             <string>&lt;&lt;  Delete</string>
+             <string>&lt;&lt;  Remove</string>
             </property>
            </widget>
           </item>
@@ -272,7 +272,7 @@ border:2px dashed;
              <enum>Qt::StrongFocus</enum>
             </property>
             <property name="text">
-             <string>&lt;&lt; Delete All</string>
+             <string>&lt;&lt; Remove All</string>
             </property>
            </widget>
           </item>

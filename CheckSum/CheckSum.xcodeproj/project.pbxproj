@@ -99,12 +99,11 @@
 		64146C52BA44DE82D9518B39 /* checksum.qrc */ = {isa = PBXFileReference; lastKnownFileType = text; path = checksum.qrc; sourceTree = "<absolute>"; };
 		6470B3A43B84FF2E90CE3323 /* CheckSum.pro */ = {isa = PBXFileReference; lastKnownFileType = text; path = CheckSum.pro; sourceTree = "<absolute>"; };
 		64EC597E08B55DA621B3032A /* /usr/local/Qt-5.2.1/mkspecs/modules/qt_lib_declarative.pri */ = {isa = PBXFileReference; lastKnownFileType = text; path = "/usr/local/Qt-5.2.1/mkspecs/modules/qt_lib_declarative.pri"; sourceTree = "<absolute>"; };
+		6704F62F1EA06DB600A53152 /* MacIcon.icns */ = {isa = PBXFileReference; explicitFileType = image.icns; name = MacIcon.icns; path = Resources/MacIcon.icns; sourceTree = SOURCE_ROOT; };
 		67251DFF1E1B464C0075D598 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
-		67251E011E1B4CC80075D598 /* MacIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MacIcon.icns; sourceTree = SOURCE_ROOT; };
 		6787000C1D95107500142E91 /* QtWidgets.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtWidgets.framework; path = "/usr/local/Qt-5.2.1/lib/QtWidgets.framework"; sourceTree = "<absolute>"; };
 		67B9F4C41DEE5FBA00F15C68 /* QtNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtNetwork.framework; path = "/usr/local/Qt-5.2.1/lib/QtNetwork.framework"; sourceTree = "<absolute>"; };
 		67DBD95D1DEDA93D00A5EC69 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		67E7E2351E07A10200B67C93 /* MacIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MacIcon.icns; sourceTree = SOURCE_ROOT; };
 		682A50D19E416195436708E4 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 2147484705; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<absolute>"; };
 		687B21AC67CA0DAB2315E21D /* /usr/local/Qt-5.2.1/mkspecs/modules/qt_lib_declarative_private.pri */ = {isa = PBXFileReference; lastKnownFileType = text; path = "/usr/local/Qt-5.2.1/mkspecs/modules/qt_lib_declarative_private.pri"; sourceTree = "<absolute>"; };
 		694CF409A95563F76AABE009 /* /usr/local/Qt-5.2.1/mkspecs/modules/qt_lib_serialport.pri */ = {isa = PBXFileReference; lastKnownFileType = text; path = "/usr/local/Qt-5.2.1/mkspecs/modules/qt_lib_serialport.pri"; sourceTree = "<absolute>"; };
@@ -333,7 +332,7 @@
 		87DF60DE337FB58864343E39 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				67E7E2351E07A10200B67C93 /* MacIcon.icns */,
+				6704F62F1EA06DB600A53152 /* MacIcon.icns */,
 				64146C52BA44DE82D9518B39 /* checksum.qrc */,
 			);
 			name = Resources;
@@ -356,7 +355,6 @@
 		E8C543AB96796ECAA2E65C57 /* CheckSum */ = {
 			isa = PBXGroup;
 			children = (
-				67251E011E1B4CC80075D598 /* MacIcon.icns */,
 				2EB56BE3C2D93CDAB0C52E67 /* Sources */,
 				25B08E2869634E9BCBA333A2 /* Generated Sources */,
 				74B182DB50CB5611B5C1C297 /* Supporting Files */,

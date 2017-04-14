@@ -181,6 +181,10 @@ void CheckSum::slot_LowerStateChanged(int state)
 {
 	currentLower = (state == Qt::Checked);
 
+	ui.lineEdit_MD5->setText("0x" + (currentLower ? ui.lineEdit_MD5->text().mid(2).toLower() : ui.lineEdit_MD5->text().mid(2).toUpper()));
+	ui.lineEdit_checkSum->setText("0x" + (currentLower ? ui.lineEdit_checkSum->text().mid(2).toLower() : ui.lineEdit_checkSum->text().mid(2).toUpper()));
+	ui.lineEdit_CRC32->setText("0x" + (currentLower ? ui.lineEdit_CRC32->text().mid(2).toLower() : ui.lineEdit_CRC32->text().mid(2).toUpper()));
+	ui.lineEdit_SHA1->setText("0x" + (currentLower ? ui.lineEdit_SHA1->text().mid(2).toLower() : ui.lineEdit_SHA1->text().mid(2).toUpper()));
 }
 
 void CheckSum::slot_RefreshExplorer(bool checked)
@@ -763,15 +767,15 @@ void CheckSum::CreateMenuActions()
     connect(actOpenFileLocation, SIGNAL(triggered(bool)), this, SLOT(slot_ActionOpenFileLocationTriggered(bool)));
     tableRecordsRightMenu->addAction(actOpenFileLocation);
     
-	actOpenFile = new QAction("Open file",this);
+	actOpenFile = new QAction("Open",this);
 	connect(actOpenFile, SIGNAL(triggered(bool)), this, SLOT(slot_ActionOpenFileTriggered(bool)));
 	tableRecordsRightMenu->addAction(actOpenFile);
 
-	actDeleteSelectedFiles = new QAction("Delete file(s)",this);
+	actDeleteSelectedFiles = new QAction("Remove",this);
 	connect(actDeleteSelectedFiles, SIGNAL(triggered(bool)), this, SLOT(slot_ActionDeleteSelectedFilesTriggered(bool)));
 	tableRecordsRightMenu->addAction(actDeleteSelectedFiles);
 
-	actRefreshSelectedFiles = new QAction("Refresh file(s)",this);
+	actRefreshSelectedFiles = new QAction("Refresh",this);
 	connect(actRefreshSelectedFiles, SIGNAL(triggered(bool)), this, SLOT(slot_ActionRefreshSelectedFilesTriggered(bool)));
 	tableRecordsRightMenu->addAction(actRefreshSelectedFiles);
 }
