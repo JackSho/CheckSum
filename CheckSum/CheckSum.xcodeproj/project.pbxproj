@@ -585,7 +585,7 @@
 				QMAKE_PKGINFO_TYPEINFO = "????";
 				QT_LIBRARY_SUFFIX = "";
 				SDKROOT = macosx;
-				SYMROOT = /Users/jie/My/Study/Qt/Projects/CheckSum/CheckSum/;
+				SYMROOT = $SRCROOT/;
 			};
 			name = Release;
 		};
@@ -677,7 +677,7 @@
 				QMAKE_PKGINFO_TYPEINFO = "????";
 				QT_LIBRARY_SUFFIX = "";
 				SDKROOT = macosx;
-				SYMROOT = /Users/jie/My/Study/Qt/Projects/CheckSum/CheckSum/;
+				SYMROOT = $SRCROOT/;
 			};
 			name = Debug;
 		};
