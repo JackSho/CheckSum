@@ -1047,7 +1047,7 @@ bool CheckSum::OpenFolderAndSelectFile(const char *filePath)
 #else
     QString pathIn(filePath);
     QStringList scriptArgs;
-    scriptArgs << QLatin1String("-e") << QString::fromLatin1("tell application \"Finder\" to reveal POSIX file \"%1\"").arg(pathIn);
+    scriptArgs << QLatin1String("-e") << QString::fromLatin1("tell application \"Finder\" to reveal POSIX file \"%1\"").arg(pathIn.replace('\\', '/'));
     QProcess::execute(QLatin1String("/usr/bin/osascript"), scriptArgs);
     scriptArgs.clear();
     scriptArgs << QLatin1String("-e") << QLatin1String("tell application \"Finder\" to activate");
