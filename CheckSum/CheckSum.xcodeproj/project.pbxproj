@@ -29,6 +29,7 @@
 		1357A03DB93FCE08BACDE3A7 /* main.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 2DF310E76F57E3E63671189C /* main.cpp */; settings = {ATTRIBUTES = (); }; };
 		15364689D2AB5A30E87A689F /* Security.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 205259EEEE2BADA5E64741E3 /* Security.framework */; };
 		167E244056E56866FE1CF0FE /* qmacstyle in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 3611B52F813C79359F307D97 /* qmacstyle */; };
+		18D15CB920B9185000758442 /* MacIcon.icns in Copy Bundle Resources */ = {isa = PBXBuildFile; fileRef = 18D15CB820B9185000758442 /* MacIcon.icns */; };
 		1AB01A4D60FEF66DC4A9763F /* checksum_plugin_import.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = A6C1970C718C444BE89B281B /* checksum_plugin_import.cpp */; settings = {ATTRIBUTES = (); }; };
 		1D137C703F4AFB177A8F32BD /* Qt5FontDatabaseSupport in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 1ED2DFC06BE668E05006F0BF /* Qt5FontDatabaseSupport */; };
 		1F8275852D155105DBC21CA0 /* qrc_checksum.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 75FDED66D5E12A555223025D /* qrc_checksum.cpp */; settings = {ATTRIBUTES = (); }; };
@@ -113,6 +114,7 @@
 		0AC71381D8AECAF2FA9523F6 /* qico */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qico; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/imageformats/libqico$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
 		0B4E925CB02E8565483139C1 /* singleapplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = singleapplication.h; path = /Users/jie/My/Study/Qt/Projects/CheckSum/CheckSum/singleapplication.h; sourceTree = "<absolute>"; };
 		1402E731C643AE1B0067112A /* Qt5PrintSupport */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = Qt5PrintSupport; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/lib/libQt5PrintSupport$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		18D15CB820B9185000758442 /* MacIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = MacIcon.icns; path = Resources/MacIcon.icns; sourceTree = "<group>"; };
 		1E3035B950537B3476CDA789 /* Qt5ThemeSupport */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = Qt5ThemeSupport; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/lib/libQt5ThemeSupport$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
 		1ED2DFC06BE668E05006F0BF /* Qt5FontDatabaseSupport */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = Qt5FontDatabaseSupport; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/lib/libQt5FontDatabaseSupport$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
 		205259EEEE2BADA5E64741E3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
@@ -295,6 +297,7 @@
 		87DF60DE337FB58864343E39 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				18D15CB820B9185000758442 /* MacIcon.icns */,
 				06BE538FB6323E57C4AFADC6 /* checksum.qrc */,
 			);
 			name = Resources;
@@ -434,6 +437,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D15CB920B9185000758442 /* MacIcon.icns in Copy Bundle Resources */,
 			);
 			name = "Copy Bundle Resources";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -689,6 +693,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_BITCODE = NO;
 				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "jie.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = CheckSum;
 				QMAKE_PKGINFO_TYPEINFO = "????";
@@ -707,6 +712,7 @@
 				ENABLE_BITCODE = NO;
 				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "jie.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = CheckSum;
