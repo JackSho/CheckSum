@@ -519,27 +519,27 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
 					.,
-					"../../../qt-everywhere-src-5.11.0/qtbase/include",
-					"../../../qt-everywhere-src-5.11.0/qtbase/include/QtWidgets",
-					"../../../qt-everywhere-src-5.11.0/qtbase/include/QtGui",
-					"../../../qt-everywhere-src-5.11.0/qtbase/include/QtNetwork",
-					"../../../qt-everywhere-src-5.11.0/qtbase/include/QtCore",
+					$QT_DIR/include,
+					$QT_DIR/include/QtWidgets,
+					$QT_DIR/include/QtGui,
+					$QT_DIR/include/QtNetwork,
+					$QT_DIR/include/QtCore,
 					.,
 					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/OpenGL.framework/Headers,
 					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/AGL.framework/Headers,
 					.,
-					"../../../qt-everywhere-src-5.11.0/qtbase/mkspecs/macx-clang",
+					"$QT_DIR/mkspecs/macx-clang",
 				);
 				INFOPLIST_FILE = Info.plist;
 				LDPLUSPLUS = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++";
 				LIBRARY_SEARCH_PATHS = (
-					"/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/styles",
-					"/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/lib",
+					$QT_DIR/plugins/styles,
+					$QT_DIR/lib,
 					/System/Library/Frameworks/,
-					"/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/platforms",
-					"/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/imageformats",
-					"/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/bearer",
-					"/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/printsupport",
+					$QT_DIR/plugins/platforms,
+					$QT_DIR/plugins/imageformats,
+					$QT_DIR/plugins/bearer,
+					$QT_DIR/plugins/printsupport,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = (
@@ -574,19 +574,20 @@
 					"-stdlib=libc++",
 					"-headerpad_max_install_names",
 					"-Wl,-rpath,@executable_path/Frameworks",
-					"-L/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/styles",
-					"-L/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/lib",
-					"-L/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/platforms",
+					"-L$QT_DIR/plugins/styles",
+					"-L$QT_DIR/lib",
+					"-L$QT_DIR/plugins/platforms",
 					"-lcups",
-					"-L/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/imageformats",
-					"-L/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/bearer",
-					"-L/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/printsupport",
+					"-L$QT_DIR/plugins/imageformats",
+					"-L$QT_DIR/plugins/bearer",
+					"-L$QT_DIR/plugins/printsupport",
 					"-lm",
 					"-lz",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jie.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = CheckSum;
 				QMAKE_PKGINFO_TYPEINFO = "????";
+				QT_DIR = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase";
 				QT_LIBRARY_SUFFIX = "";
 				SDKROOT = macosx;
 				SYMROOT = $SRCROOT/;
@@ -610,27 +611,27 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
 					.,
-					"../../../qt-everywhere-src-5.11.0/qtbase/include",
-					"../../../qt-everywhere-src-5.11.0/qtbase/include/QtWidgets",
-					"../../../qt-everywhere-src-5.11.0/qtbase/include/QtGui",
-					"../../../qt-everywhere-src-5.11.0/qtbase/include/QtNetwork",
-					"../../../qt-everywhere-src-5.11.0/qtbase/include/QtCore",
+					$QT_DIR/include,
+					$QT_DIR/include/QtWidgets,
+					$QT_DIR/include/QtGui,
+					$QT_DIR/include/QtNetwork,
+					$QT_DIR/include/QtCore,
 					.,
 					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/OpenGL.framework/Headers,
 					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/AGL.framework/Headers,
 					.,
-					"../../../qt-everywhere-src-5.11.0/qtbase/mkspecs/macx-clang",
+					"$QT_DIR/mkspecs/macx-clang",
 				);
 				INFOPLIST_FILE = Info.plist;
 				LDPLUSPLUS = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++";
 				LIBRARY_SEARCH_PATHS = (
-					"/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/styles",
-					"/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/lib",
+					$QT_DIR/plugins/styles,
+					$QT_DIR/lib,
 					/System/Library/Frameworks/,
-					"/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/platforms",
-					"/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/imageformats",
-					"/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/bearer",
-					"/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/printsupport",
+					$QT_DIR/plugins/platforms,
+					$QT_DIR/plugins/imageformats,
+					$QT_DIR/plugins/bearer,
+					$QT_DIR/plugins/printsupport,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				ONLY_ACTIVE_ARCH = YES;
@@ -666,19 +667,20 @@
 					"-stdlib=libc++",
 					"-headerpad_max_install_names",
 					"-Wl,-rpath,@executable_path/Frameworks",
-					"-L/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/styles",
-					"-L/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/lib",
-					"-L/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/platforms",
+					"-L$QT_DIR/plugins/styles",
+					"-L$QT_DIR/lib",
+					"-L$QT_DIR/plugins/platforms",
 					"-lcups",
-					"-L/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/imageformats",
-					"-L/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/bearer",
-					"-L/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/printsupport",
+					"-L$QT_DIR/plugins/imageformats",
+					"-L$QT_DIR/plugins/bearer",
+					"-L$QT_DIR/plugins/printsupport",
 					"-lm",
 					"-lz",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jie.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = CheckSum;
 				QMAKE_PKGINFO_TYPEINFO = "????";
+				QT_DIR = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase";
 				QT_LIBRARY_SUFFIX = "";
 				SDKROOT = macosx;
 				SYMROOT = $SRCROOT/;
