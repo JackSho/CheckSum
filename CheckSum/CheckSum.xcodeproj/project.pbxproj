@@ -590,7 +590,7 @@
 				QT_DIR = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase";
 				QT_LIBRARY_SUFFIX = "";
 				SDKROOT = macosx;
-				SYMROOT = $SRCROOT/;
+				SYMROOT = $SRCROOT;
 			};
 			name = Release;
 		};
@@ -683,7 +683,7 @@
 				QT_DIR = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase";
 				QT_LIBRARY_SUFFIX = "";
 				SDKROOT = macosx;
-				SYMROOT = $SRCROOT/;
+				SYMROOT = $SRCROOT;
 			};
 			name = Debug;
 		};
