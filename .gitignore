@@ -5,3 +5,4 @@ moc_*.h
 *.xcuserdatad
 Debug
 Release
+Index/DataStore
