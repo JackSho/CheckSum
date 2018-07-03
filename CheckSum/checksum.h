@@ -95,6 +95,7 @@ private:
 		void slot_CalculateSuccess(const bool &success,const FileCheckSum &fileCheckSum);
 		void slot_Completed();
 		void slot_ShowToolTip(const QModelIndex &index);
+		void slot_OpenFile(const QModelIndex &index);
 		
 		void slot_ActionAddThisFileTriggered(bool checked = false);
 		void slot_ActionAddChildFilesTriggered(bool checked = false);

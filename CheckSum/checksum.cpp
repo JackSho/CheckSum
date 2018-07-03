@@ -115,6 +115,7 @@ CheckSum::CheckSum(QString initFileList, QWidget *parent)
 	ui.tableView_records->setAlternatingRowColors(true);
 
 	connect(ui.tableView_records,SIGNAL(entered(const QModelIndex &)),this,SLOT(slot_ShowToolTip(const QModelIndex &)),Qt::DirectConnection);
+	connect(ui.tableView_records, SIGNAL(doubleClicked(const QModelIndex &)), this, SLOT(slot_OpenFile(const QModelIndex &)));
 	connect(ui.tableView_records->selectionModel(),SIGNAL(currentRowChanged(const QModelIndex &, const QModelIndex &)),SLOT(slot_CurrentRowChanged(const QModelIndex &, const QModelIndex &)),Qt::DirectConnection);
 
 	connect(&calcManager,SIGNAL(sig_CalculateSuccess(const bool &,const FileCheckSum &)),SLOT(slot_CalculateSuccess(const bool &,const FileCheckSum &)),Qt::DirectConnection);
@@ -386,38 +387,34 @@ void CheckSum::dropEvent(QDropEvent *event)
     qDebug() << "CheckSum::dropEvent enter.";
 #endif
 
+	bool needConvertFileUrl = false;
+	
+#ifdef  Q_OS_MAC
+	SInt32 macVersionMajor;
+	SInt32 macVersionMinor;
+	if ((Gestalt(gestaltSystemVersionMajor, &macVersionMajor) == noErr) && (Gestalt(gestaltSystemVersionMinor, &macVersionMinor) == noErr))
+	{
+		
+#ifdef QT_DEBUG
+		qDebug() << QString("CheckSum::dropEvent enter. macVersionMajor = %1, macVersionMinor = %2").arg(macVersionMajor).arg(macVersionMinor);
+#endif
+		///System/Library/CoreServices/SystemVersion.plist  Could look here, but this is easier.
+		if (macVersionMajor >= 10 && macVersionMinor >= 10) // need at least v10.10.0 of Mac OS X
+		{
+			needConvertFileUrl = true;
+		}
+	}
+#endif
+	
 	QList<QUrl> urls = event->mimeData()->urls();
 	int exist = 0;
 	for(int i=0;i<urls.count();i++)
 	{
 		QUrl url = urls.at(i);
-        
-#ifdef  Q_OS_MAC
-      
-        SInt32 macVersionMajor;
-        SInt32 macVersionMinor;
-        bool needConvertFileUrl = false;
-        
-        if ((Gestalt(gestaltSystemVersionMajor, &macVersionMajor) == noErr) && (Gestalt(gestaltSystemVersionMinor, &macVersionMinor) == noErr))
-        {
-            
-#ifdef QT_DEBUG
-            qDebug() << QString("CheckSum::dropEvent enter. macVersionMajor = %1, macVersionMinor = %2").arg(macVersionMajor).arg(macVersionMinor);
-#endif
-            ///System/Library/CoreServices/SystemVersion.plist  Could look here, but this is easier.
-            if (macVersionMajor >= 10 && macVersionMinor >= 10) // need at least v10.10.0 of Mac OS X
-            {
-                needConvertFileUrl = true;
-            }
-        }
         if(needConvertFileUrl)
         {
             LeawoQUrlToCFURLRef(url);
         }
-
-        
-#endif
-        
         QString path =url.toLocalFile();
         
 #ifdef QT_DEBUG
@@ -656,6 +653,19 @@ void CheckSum::slot_ShowToolTip(const QModelIndex &index)
 		//"\nSize: " + QString("%L1").arg(fileCheckSum.fileInfo.size()) + " Bytes";//以字节为单位，千分位表示文件大小(Size: 10 234 Bytes)
 
 	QToolTip::showText(QCursor::pos(), toopTip); 
+}
+
+void CheckSum::slot_OpenFile(const QModelIndex &index)
+{
+	if(!index.isValid())
+		return;
+	int rowIndex = index.row();
+	QString filePath = tableRecord->item(rowIndex,CheckSum::FilePath)->text();
+	
+	if(filePath.isEmpty())
+		return;
+	
+	QDesktopServices::openUrl(QUrl::fromLocalFile(filePath));
 }
 
 void CheckSum::SetTaskPercent()
@@ -898,9 +908,7 @@ void CheckSum::slot_ActionOpenFileTriggered(bool checked)
 	QModelIndexList rowModelIndexList = ui.tableView_records->selectionModel()->selectedRows();
 	while(rowModelIndexList.count())
 	{
-		int rowIndex = rowModelIndexList.takeLast().row();
-		QString filePath = tableRecord->item(rowIndex,CheckSum::FilePath)->text();
-		QDesktopServices::openUrl(QUrl::fromLocalFile(filePath));
+		slot_OpenFile(rowModelIndexList.takeLast());
 	}
 }
 
