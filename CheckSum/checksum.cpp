@@ -411,10 +411,12 @@ void CheckSum::dropEvent(QDropEvent *event)
 	for(int i=0;i<urls.count();i++)
 	{
 		QUrl url = urls.at(i);
+#ifdef Q_OS_MAC
         if(needConvertFileUrl)
         {
             LeawoQUrlToCFURLRef(url);
         }
+#endif
         QString path =url.toLocalFile();
         
 #ifdef QT_DEBUG
