@@ -11,6 +11,7 @@
 #include <QTextCodec>
 #include <QDir>
 #include <QProcess>
+#include <QClipboard>
 
 #ifdef Q_OS_WIN
 
@@ -790,6 +791,10 @@ void CheckSum::CreateMenuActions()
 	actRefreshSelectedFiles = new QAction("Refresh",this);
 	connect(actRefreshSelectedFiles, SIGNAL(triggered(bool)), this, SLOT(slot_ActionRefreshSelectedFilesTriggered(bool)));
 	tableRecordsRightMenu->addAction(actRefreshSelectedFiles);
+	
+	actCopyFilePath = new QAction("Copy path",this);
+	connect(actCopyFilePath, SIGNAL(triggered(bool)), this, SLOT(slot_ActionCopyFilePathTriggered(bool)));
+	tableRecordsRightMenu->addAction(actCopyFilePath);
 }
 
 void CheckSum::DestoryMenuActions()
@@ -922,6 +927,19 @@ void CheckSum::slot_ActionDeleteSelectedFilesTriggered(bool checked)
 void CheckSum::slot_ActionRefreshSelectedFilesTriggered(bool checked)
 {
 	slot_RefreshSelectedRecordList(checked);
+}
+
+void CheckSum::slot_ActionCopyFilePathTriggered(bool checked)
+{
+	QModelIndexList rowModelIndexList = ui.tableView_records->selectionModel()->selectedRows();
+	QString paths;
+	while(rowModelIndexList.count())
+	{
+		int rowIndex = rowModelIndexList.takeLast().row();
+		QString filePath = tableRecord->item(rowIndex,CheckSum::FilePath)->text();
+		paths.append(filePath.append(' '));
+	}
+	QApplication::clipboard()->setText(paths);
 }
 
 void CheckSum::UpdateBigIcon(QIcon icon)

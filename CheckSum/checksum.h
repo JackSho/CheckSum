@@ -43,6 +43,7 @@ private:
 	QAction *actOpenFile;//打开文件
 	QAction *actDeleteSelectedFiles;//删除选中文件
 	QAction *actRefreshSelectedFiles;//删除选中文件
+	QAction *actCopyFilePath;
 	QAction *actAddChildFiles;//添加目录下的文件
 	QAction *actAddAllChildFiles;//递归此目录下的所有文件
 	QAction *actAddThisFile;//添加此文件
@@ -105,6 +106,7 @@ private:
 		void slot_ActionOpenFileTriggered(bool checked = false);
 		void slot_ActionDeleteSelectedFilesTriggered(bool checked = false);
 		void slot_ActionRefreshSelectedFilesTriggered(bool checked = false);
+		void slot_ActionCopyFilePathTriggered(bool checked = false);
 
 	public slots:
 		void receiveMessage(QString message);
