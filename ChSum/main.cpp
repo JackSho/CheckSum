@@ -71,6 +71,7 @@ int main(int argc, char *argv[])
 	{
 		printf("MD5=%s\n", calc.md5.toLatin1().data());
 		printf("SHA1=%s\n", calc.sha1.toLatin1().data());
+		printf("SHA256=%s\n", calc.sha256.toLatin1().data());
 		printf("CRC32=%s\n", calc.crc32.toLatin1().data());
 		printf("SUM=%s\n", calc.sum.toLatin1().data());
 	}

@@ -56,6 +56,7 @@ int Calc::Run()
 	{		
 		QCryptographicHash chMd5(QCryptographicHash::Md5);
 		QCryptographicHash chSHA1(QCryptographicHash::Sha1);
+		QCryptographicHash chSHA256(QCryptographicHash::Sha256);
 		qint64 fileSize = inFile.size();
 		qint64 readSize = 0;
 		QByteArray buf;
@@ -69,6 +70,7 @@ int Calc::Run()
 			bufLen = buf.length();
 			chMd5.addData(buf);
 			chSHA1.addData(buf);
+			chSHA256.addData(buf);
 			dat = buf.data();
 			while(len < bufLen)
 			{
@@ -85,12 +87,14 @@ int Calc::Run()
 		inFile.close();
 		md5 = chMd5.result().toHex().toLower();
 		sha1 = chSHA1.result().toHex().toLower();
+		sha256 = chSHA256.result().toHex().toLower();
 		sum = QString::number(checkSum, 16).toLower();
 		crc32 = QString::number(crc32Ret, 16).toLower();
 		if(option & CALC_OPTION_UPPER)
 		{
 			md5 = md5.toUpper();
 			sha1 = sha1.toUpper();
+			sha256 = sha256.toUpper();
 			sum = sum.toUpper();
 			crc32 = crc32.toUpper();
 		}	

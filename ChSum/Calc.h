@@ -21,6 +21,7 @@ public:
 	QString file;
 	QString md5;
 	QString sha1;
+	QString sha256;
 	QString sum;
 	QString crc32;
 
