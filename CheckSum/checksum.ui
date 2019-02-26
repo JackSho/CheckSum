@@ -102,7 +102,7 @@ QTableView::item::hover{
         </font>
        </property>
        <layout class="QGridLayout" name="gridLayout_Right">
-        <item row="0" column="2">
+        <item row="0" column="3">
          <widget class="QLineEdit" name="lineEdit_fileName">
           <property name="font">
            <font>
@@ -118,7 +118,7 @@ QTableView::item::hover{
           </property>
          </widget>
         </item>
-        <item row="0" column="0" rowspan="6">
+        <item row="0" column="0" rowspan="7">
          <layout class="QVBoxLayout" name="verticalLayout">
           <item>
            <widget class="QWidget" name="widget_icon" native="true">
@@ -339,7 +339,7 @@ border:2px dashed;
           </item>
          </layout>
         </item>
-        <item row="0" column="3" rowspan="2">
+        <item row="0" column="4" rowspan="2">
          <widget class="MoveLabel" name="label_Percent">
           <property name="font">
            <font>
@@ -355,7 +355,7 @@ border:2px dashed;
           </property>
          </widget>
         </item>
-        <item row="5" column="1" colspan="3">
+        <item row="6" column="1" colspan="4">
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
            <widget class="QPushButton" name="pushButton_refreshAll">
@@ -416,7 +416,7 @@ border:2px dashed;
           </item>
          </layout>
         </item>
-        <item row="1" column="2">
+        <item row="1" column="3">
          <widget class="QLineEdit" name="lineEdit_MD5">
           <property name="font">
            <font>
@@ -432,7 +432,7 @@ border:2px dashed;
           </property>
          </widget>
         </item>
-        <item row="3" column="1" colspan="3">
+        <item row="4" column="1" colspan="4">
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
            <widget class="MoveLabel" name="label_3">
@@ -590,7 +590,7 @@ border:2px dashed;
           </property>
          </widget>
         </item>
-        <item row="2" column="2" colspan="2">
+        <item row="2" column="3" colspan="2">
          <widget class="QLineEdit" name="lineEdit_SHA1">
           <property name="font">
            <font>
@@ -625,7 +625,7 @@ border:2px dashed;
           </property>
          </widget>
         </item>
-        <item row="4" column="1" colspan="3">
+        <item row="5" column="1" colspan="4">
          <widget class="QTableView" name="tableView_records">
           <property name="font">
            <font>
@@ -666,6 +666,32 @@ border:2px dashed;
           </property>
           <property name="text">
            <string>SHA1:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLabel" name="label_7">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>11</pointsize>
+           </font>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::StrongFocus</enum>
+          </property>
+          <property name="text">
+           <string>SHA256:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="3" colspan="2">
+         <widget class="QLineEdit" name="lineEdit_SHA256">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>11</pointsize>
+           </font>
           </property>
          </widget>
         </item>

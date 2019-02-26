@@ -12,6 +12,7 @@ struct FileCheckSum
 	QString checkSum;
 	QString crc32;
 	QString sha1;
+	QString sha256;
 	bool bOK;
 	QIcon icon;
 
@@ -21,6 +22,7 @@ struct FileCheckSum
         checkSum = "";
         crc32 = "";
         sha1 = "";
+		sha256 = "";
         bOK = false;
 	}
 
@@ -30,6 +32,7 @@ struct FileCheckSum
 		checkSum = "";
 		crc32 = "";
 		sha1 = "";
+		sha256 = "";
 		bOK = false;
 	};
 	FileCheckSum(const QFileInfo &newFileInfo)
@@ -42,6 +45,7 @@ struct FileCheckSum
         checkSum = "";
         crc32 = "";
         sha1 = "";
+		sha256 = "";
         bOK = false;
         fileInfo = newFileInfo;
 #endif	
@@ -55,6 +59,7 @@ struct FileCheckSum
         checkSum = "";
         crc32 = "";
         sha1 = "";
+		sha256 = "";
         bOK = false;
         fileInfo = QFileInfo(filePath);
 #endif

@@ -187,6 +187,7 @@ void CheckSum::slot_LowerStateChanged(int state)
 	ui.lineEdit_checkSum->setText("0x" + (currentLower ? ui.lineEdit_checkSum->text().mid(2).toLower() : ui.lineEdit_checkSum->text().mid(2).toUpper()));
 	ui.lineEdit_CRC32->setText("0x" + (currentLower ? ui.lineEdit_CRC32->text().mid(2).toLower() : ui.lineEdit_CRC32->text().mid(2).toUpper()));
 	ui.lineEdit_SHA1->setText("0x" + (currentLower ? ui.lineEdit_SHA1->text().mid(2).toLower() : ui.lineEdit_SHA1->text().mid(2).toUpper()));
+	ui.lineEdit_SHA256->setText("0x" + (currentLower ? ui.lineEdit_SHA256->text().mid(2).toLower() : ui.lineEdit_SHA256->text().mid(2).toUpper()));
 }
 
 void CheckSum::slot_RefreshExplorer(bool checked)
@@ -327,6 +328,7 @@ void CheckSum::SetCheckSum(const FileCheckSum &fileCheckSum,int rowIndex,bool ch
 	ui.lineEdit_checkSum->setText("0x" + (currentLower ? fileCheckSum.checkSum.toLower() : fileCheckSum.checkSum));
 	ui.lineEdit_CRC32->setText("0x" + (currentLower ? fileCheckSum.crc32.toLower() : fileCheckSum.crc32));
 	ui.lineEdit_SHA1->setText("0x" + (currentLower ? fileCheckSum.sha1.toLower() : fileCheckSum.sha1));
+	ui.lineEdit_SHA256->setText("0x" + (currentLower ? fileCheckSum.sha256.toLower() : fileCheckSum.sha256));
 	ui.lineEdit_Size->setText(QString("%L1").arg(fileCheckSum.fileInfo.size()) + " Bytes");
 	
 	int rowCount = tableRecord->rowCount();
@@ -363,6 +365,7 @@ void CheckSum::SetCheckSumNull()
 	ui.lineEdit_checkSum->clear();
 	ui.lineEdit_CRC32->clear();
 	ui.lineEdit_SHA1->clear();
+	ui.lineEdit_SHA256->clear();
 	ui.lineEdit_Size->clear();
 	UpdateBigIcon();
 }
@@ -652,6 +655,7 @@ void CheckSum::slot_ShowToolTip(const QModelIndex &index)
 		"\nCheckSum: 0x" + fileCheckSum.checkSum + 
 		"\nMd5: 0x" + fileCheckSum.md5 + 
 		"\nSHA1: 0x" + fileCheckSum.sha1 +
+		"\nSHA256: 0x" + fileCheckSum.sha256 +
 		"\nSize: " + QString("%1 %2").arg(QString::number(size,'f',2)).arg(sizeUnit);
 		//"\nSize: " + QString("%L1").arg(fileCheckSum.fileInfo.size()) + " Bytes";//以字节为单位，千分位表示文件大小(Size: 10 234 Bytes)
 

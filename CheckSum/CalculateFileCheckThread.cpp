@@ -68,6 +68,7 @@ void CalculateFileCheckThread::run()
 		{
 			QCryptographicHash chMd5(QCryptographicHash::Md5);
 			QCryptographicHash chSHA1(QCryptographicHash::Sha1);
+			QCryptographicHash chSHA256(QCryptographicHash::Sha256);
 			qint64 fileSize = inFile.size();
 			qint64 readSize = 0;
 			QByteArray buf;
@@ -81,6 +82,7 @@ void CalculateFileCheckThread::run()
 				bufLen = buf.length();
 				chMd5.addData(buf);
 				chSHA1.addData(buf);
+				chSHA256.addData(buf);
 				dat = buf.data();
 				while(len < bufLen)
 				{
@@ -102,6 +104,7 @@ void CalculateFileCheckThread::run()
 			inFile.close();
 			fileCheckSum.md5 = chMd5.result().toHex().toUpper();
 			fileCheckSum.sha1 = chSHA1.result().toHex().toUpper();
+			fileCheckSum.sha256 = chSHA256.result().toHex().toUpper();
 			fileCheckSum.checkSum = QString::number(checkSum,16).toUpper();
 			fileCheckSum.crc32 = QString::number(crc32Ret,16).toUpper();
 			QFileIconProvider fileIP;
