@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		18121E8820BA65D70088D838 /* libQt5Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18121E8720BA65D70088D838 /* libQt5Core.a */; };
 		18121E8A20BA66630088D838 /* libqtpcre2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18121E8920BA66630088D838 /* libqtpcre2.a */; };
 		18121E8C20BA66E20088D838 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 723F90793B2C195E2CCB2233 /* AppKit.framework */; };
+		18B162B623601979004C20E5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B162B523601979004C20E5 /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +33,7 @@
 		18121E7C20BA644B0088D838 /* ChSum */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ChSum; sourceTree = BUILT_PRODUCTS_DIR; };
 		18121E8720BA65D70088D838 /* libQt5Core.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libQt5Core.a; path = "../../../qt-everywhere-src-5.11.0/qtbase/lib/libQt5Core.a"; sourceTree = "<group>"; };
 		18121E8920BA66630088D838 /* libqtpcre2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libqtpcre2.a; path = "../../../qt-everywhere-src-5.11.0/qtbase/lib/libqtpcre2.a"; sourceTree = "<group>"; };
+		18B162B523601979004C20E5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = ../../../../../../../../System/Library/Frameworks/Security.framework; sourceTree = "<group>"; };
 		1E3035B950537B3476CDA789 /* Qt5ThemeSupport */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = Qt5ThemeSupport; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/lib/libQt5ThemeSupport$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
 		1ED2DFC06BE668E05006F0BF /* Qt5FontDatabaseSupport */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = Qt5FontDatabaseSupport; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/lib/libQt5FontDatabaseSupport$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
 		28D93D11FE4EC49FC25C362F /* qicns */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qicns; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/imageformats/libqicns$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
@@ -84,6 +86,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18121E8C20BA66E20088D838 /* AppKit.framework in Frameworks */,
+				18B162B623601979004C20E5 /* Security.framework in Frameworks */,
 				18121E8820BA65D70088D838 /* libQt5Core.a in Frameworks */,
 				18121E8A20BA66630088D838 /* libqtpcre2.a in Frameworks */,
 			);
@@ -121,6 +124,7 @@
 		AF39DD055C3EF8226FBE929D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18B162B523601979004C20E5 /* Security.framework */,
 				18121E8720BA65D70088D838 /* libQt5Core.a */,
 				18121E8920BA66630088D838 /* libqtpcre2.a */,
 				A188A587032BA2BED00BCC33 /* qcocoa */,
@@ -222,6 +226,7 @@
 		6DB9C3763D02B1415CD9D565 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 1020;
 				TargetAttributes = {
 					18121E7B20BA644B0088D838 = {
 						CreatedOnToolsVersion = 9.3;
@@ -230,11 +235,12 @@
 				};
 			};
 			buildConfigurationList = DAC4C1AA5EDEA1C85E9CA5E6 /* Build configuration list for PBXProject "ChSum" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = E8C543AB96796ECAA2E65C57 /* ChSum */;
 			productRefGroup = FE0A091FDBFB3E9C31B7A1BD /* Products */;
@@ -291,8 +297,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -309,8 +313,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -347,8 +351,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -360,8 +362,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -370,119 +372,59 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
-				ARCHS = x86_64;
 				"ARCHS[sdk=macosx*]" = x86_64;
 				CC = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = Z2V2BG5RY5;
 				DYLIB_COMPATIBILITY_VERSION = 1.0;
 				DYLIB_CURRENT_VERSION = 1.0.0;
 				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
 					.,
 					$QT_DIR/include,
 					$QT_DIR/include/QtGui,
 					$QT_DIR/include/QtCore,
-					.,
-					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/OpenGL.framework/Headers,
-					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/AGL.framework/Headers,
 					"$QT_DIR/mkspecs/macx-clang",
 				);
 				INFOPLIST_FILE = Info.plist;
 				LDPLUSPLUS = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++";
 				LIBRARY_SEARCH_PATHS = (
-					$QT_DIR/plugins/platforms,
 					/System/Library/Frameworks/,
 					$QT_DIR/lib,
+					$QT_DIR/plugins/platforms,
 					$QT_DIR/plugins/imageformats,
 					$QT_DIR/plugins/printsupport,
 					$QT_DIR/plugins/styles,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				OTHER_CFLAGS = (
-					"-pipe",
-					"-O2",
-					"-Wall",
-					"-W",
-					"-fPIC",
-					"-DQT_DEPRECATED_WARNINGS",
-					"-DQT_NO_DEBUG",
-					"-DQT_GUI_LIB",
-					"-DQT_CORE_LIB",
-				);
-				OTHER_CPLUSPLUSFLAGS = (
-					"-pipe",
-					"-stdlib=libc++",
-					"-O2",
-					"-std=gnu++11",
-					"-Wall",
-					"-W",
-					"-fPIC",
-					"-DQT_DEPRECATED_WARNINGS",
-					"-DQT_NO_DEBUG",
-					"-DQT_GUI_LIB",
-					"-DQT_CORE_LIB",
-				);
-				OTHER_LDFLAGS = (
-					"-stdlib=libc++",
-					"-headerpad_max_install_names",
-					"-Wl,-rpath,@executable_path/Frameworks",
-					"-L$QT_DIR/plugins/platforms",
-					"-lcups",
-					"-L$QT_DIR/lib",
-					"-L$QT_DIR/plugins/imageformats",
-					"-L$QT_DIR/plugins/printsupport",
-					"-L$QT_DIR/plugins/styles",
-					"-lm",
-					"-lz",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "jie.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = ChSum;
-				QMAKE_PKGINFO_TYPEINFO = "????";
-				QT_DIR = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase";
-				QT_LIBRARY_SUFFIX = "";
-				SDKROOT = macosx;
-				SYMROOT = $SRCROOT;
-			};
-			name = Release;
-		};
-		3AA6C32AC930069E80220CF1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
-				ARCHS = x86_64;
-				"ARCHS[sdk=macosx*]" = x86_64;
-				CC = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DYLIB_COMPATIBILITY_VERSION = 1.0;
-				DYLIB_CURRENT_VERSION = 1.0.0;
-				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					.,
-					$QT_DIR/include,
-					$QT_DIR/include/QtGui,
-					$QT_DIR/include/QtCore,
-					.,
-					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/OpenGL.framework/Headers,
-					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/AGL.framework/Headers,
-					"$QT_DIR/mkspecs/macx-clang",
-				);
-				INFOPLIST_FILE = Info.plist;
-				LDPLUSPLUS = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++";
-				LIBRARY_SEARCH_PATHS = (
-					$QT_DIR/plugins/platforms,
-					/System/Library/Frameworks/,
-					$QT_DIR/lib,
-					$QT_DIR/plugins/imageformats,
-					$QT_DIR/plugins/printsupport,
-					$QT_DIR/plugins/styles,
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
 					"-pipe",
@@ -524,7 +466,115 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "jie.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ChSum;
 				QMAKE_PKGINFO_TYPEINFO = "????";
-				QT_DIR = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase";
+				QT_DIR = /Users/jie/my/study/qt/qt5/qtbase;
+				QT_LIBRARY_SUFFIX = "";
+				SDKROOT = macosx;
+				SYMROOT = $SRCROOT;
+			};
+			name = Release;
+		};
+		3AA6C32AC930069E80220CF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				"ARCHS[sdk=macosx*]" = x86_64;
+				CC = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Z2V2BG5RY5;
+				DYLIB_COMPATIBILITY_VERSION = 1.0;
+				DYLIB_CURRENT_VERSION = 1.0.0;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					.,
+					$QT_DIR/include,
+					$QT_DIR/include/QtGui,
+					$QT_DIR/include/QtCore,
+					"$QT_DIR/mkspecs/macx-clang",
+				);
+				INFOPLIST_FILE = Info.plist;
+				LDPLUSPLUS = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++";
+				LIBRARY_SEARCH_PATHS = (
+					/System/Library/Frameworks/,
+					$QT_DIR/lib,
+					$QT_DIR/plugins/platforms,
+					$QT_DIR/plugins/imageformats,
+					$QT_DIR/plugins/printsupport,
+					$QT_DIR/plugins/styles,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-pipe",
+					"-O2",
+					"-Wall",
+					"-W",
+					"-fPIC",
+					"-DQT_DEPRECATED_WARNINGS",
+					"-DQT_NO_DEBUG",
+					"-DQT_GUI_LIB",
+					"-DQT_CORE_LIB",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-pipe",
+					"-stdlib=libc++",
+					"-O2",
+					"-std=gnu++11",
+					"-Wall",
+					"-W",
+					"-fPIC",
+					"-DQT_DEPRECATED_WARNINGS",
+					"-DQT_NO_DEBUG",
+					"-DQT_GUI_LIB",
+					"-DQT_CORE_LIB",
+				);
+				OTHER_LDFLAGS = (
+					"-stdlib=libc++",
+					"-headerpad_max_install_names",
+					"-Wl,-rpath,@executable_path/Frameworks",
+					"-L$QT_DIR/plugins/platforms",
+					"-lcups",
+					"-L$QT_DIR/lib",
+					"-L$QT_DIR/plugins/imageformats",
+					"-L$QT_DIR/plugins/printsupport",
+					"-L$QT_DIR/plugins/styles",
+					"-lm",
+					"-lz",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jie.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = ChSum;
+				QMAKE_PKGINFO_TYPEINFO = "????";
+				QT_DIR = /Users/jie/my/study/qt/qt5/qtbase;
 				QT_LIBRARY_SUFFIX = "";
 				SDKROOT = macosx;
 				SYMROOT = $SRCROOT;

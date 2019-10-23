@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	QString argLine;
 	if(argc == 1)
 	{
-		printf(usage);
+        printf("%s", usage);
 		return 0;
 	}
 	for(int i = 1; i < argc; i ++)
@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
 	}
 	if(!hasFile)
 	{
-		printf(usage);
+        printf("%s", usage);
 		return 0;
 	}
 	Calc calc(inputFile, calcOption);
