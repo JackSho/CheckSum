@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -435,11 +435,12 @@
 					};
 					97FAA9D838DADED6991D9BC6 = {
 						DevelopmentTeam = Z2V2BG5RY5;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = DAC4C1AA5EDEA1C85E9CA5E6 /* Build configuration list for PBXProject "CheckSum" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -615,7 +616,7 @@
 				QMAKE_PKGINFO_TYPEINFO = "????";
 				QT_LIBRARY_SUFFIX = "";
 				SDKROOT = macosx10.14;
-				SYMROOT = /Users/jie/My/Study/Qt/Projects/CheckSum/CheckSum/.xcode;
+				SYMROOT = $SRCROOT;
 			};
 			name = Release;
 		};
@@ -710,7 +711,7 @@
 				QMAKE_PKGINFO_TYPEINFO = "????";
 				QT_LIBRARY_SUFFIX = "";
 				SDKROOT = macosx10.14;
-				SYMROOT = /Users/jie/My/Study/Qt/Projects/CheckSum/CheckSum/.xcode;
+				SYMROOT = $SRCROOT;
 			};
 			name = Debug;
 		};
