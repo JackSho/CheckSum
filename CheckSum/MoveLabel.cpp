@@ -34,7 +34,7 @@ void MoveLabel::mouseMoveEvent(QMouseEvent *event)
 		parentWidget->move(event->globalPos()+ relativePos);
 }
 
-void MoveLabel::mouseReleaseEvent(QMouseEvent *event)
+void MoveLabel::mouseReleaseEvent(QMouseEvent *)
 {
 	press = false;
 }

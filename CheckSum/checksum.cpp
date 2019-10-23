@@ -191,12 +191,12 @@ void CheckSum::slot_LowerStateChanged(int state)
 	ui.lineEdit_SHA256->setText("0x" + (currentLower ? ui.lineEdit_SHA256->text().mid(2).toLower() : ui.lineEdit_SHA256->text().mid(2).toUpper()));
 }
 
-void CheckSum::slot_RefreshExplorer(bool checked)
+void CheckSum::slot_RefreshExplorer(bool)
 {
 	model->refresh();
 }
 
-void CheckSum::slot_AddToRecordList(bool checked)
+void CheckSum::slot_AddToRecordList(bool)
 {
 	QModelIndex index = ui.treeView_explorer->currentIndex();
 	if(index.isValid())
@@ -205,7 +205,7 @@ void CheckSum::slot_AddToRecordList(bool checked)
 	}
 }
 
-void CheckSum::slot_DeleteFromRecordList(bool checked)
+void CheckSum::slot_DeleteFromRecordList(bool)
 {
 	QModelIndexList rowModelIndexList = ui.tableView_records->selectionModel()->selectedRows();
 	while(rowModelIndexList.count())
@@ -226,7 +226,7 @@ void CheckSum::slot_DeleteFromRecordList(bool checked)
 	UpdateRefreshAllEnable();
 }
 
-void CheckSum::slot_DeleteAllFromRecordList(bool checked)
+void CheckSum::slot_DeleteAllFromRecordList(bool)
 {
 	tableRecord->removeRows(0,tableRecord->rowCount());
 	calcManager.DeleteCalculateTask();
@@ -237,7 +237,7 @@ void CheckSum::slot_DeleteAllFromRecordList(bool checked)
 	ui.pushButton_refreshSelected->setEnabled(false);
 }
 
-void CheckSum::slot_RefreshSelectedRecordList(bool checked)
+void CheckSum::slot_RefreshSelectedRecordList(bool)
 {
 	QModelIndexList rowModelIndexList = ui.tableView_records->selectionModel()->selectedRows();
 	while(rowModelIndexList.count())
@@ -257,7 +257,7 @@ void CheckSum::slot_RefreshSelectedRecordList(bool checked)
 	UpdateBigIcon();
 }
 
-void CheckSum::slot_RefreshAllFromRecordList(bool checked)
+void CheckSum::slot_RefreshAllFromRecordList(bool)
 {
 	int rowIndex = 0;
 	if(tableRecord->rowCount())
@@ -280,7 +280,7 @@ void CheckSum::slot_RefreshAllFromRecordList(bool checked)
 	UpdateBigIcon();
 }
 
-void CheckSum::slot_HideShowLeft(bool checked)
+void CheckSum::slot_HideShowLeft(bool)
 {
 	static bool showLeft = true;
 	static QRect rect(0,0,0,0);
@@ -303,7 +303,7 @@ void CheckSum::slot_HideShowLeft(bool checked)
 	showLeft = !showLeft;
 }
 
-void CheckSum::slot_Exit(bool checked)
+void CheckSum::slot_Exit(bool)
 {
 	close();
 }
@@ -473,12 +473,12 @@ void CheckSum::mouseMoveEvent(QMouseEvent *event)
 		this->move(event->globalPos()+ relativePos);
 }
 
-void CheckSum::mouseReleaseEvent(QMouseEvent *event)
+void CheckSum::mouseReleaseEvent(QMouseEvent *)
 {
 	press = false;
 }
 
-void CheckSum::slot_CurrentRowChanged(const QModelIndex & current, const QModelIndex & previous)
+void CheckSum::slot_CurrentRowChanged(const QModelIndex & current, const QModelIndex &)
 {
 	if(iSelectedIndex >= 0)
 	{
@@ -880,7 +880,7 @@ void CheckSum::AddDirChildFiles(QString path,bool recursive)
 	}
 }
 
-void CheckSum::slot_ActionAddChildFilesTriggered(bool checked)
+void CheckSum::slot_ActionAddChildFilesTriggered(bool)
 {
 	QModelIndex index = ui.treeView_explorer->currentIndex();
 	QFileInfo fileInfo = model->fileInfo(index);
@@ -890,7 +890,7 @@ void CheckSum::slot_ActionAddChildFilesTriggered(bool checked)
 	}
 }
 
-void CheckSum::slot_ActionAddAllChildFilesTriggered(bool checked)
+void CheckSum::slot_ActionAddAllChildFilesTriggered(bool)
 {
 	QModelIndex index = ui.treeView_explorer->currentIndex();
 	QFileInfo fileInfo = model->fileInfo(index);
@@ -900,7 +900,7 @@ void CheckSum::slot_ActionAddAllChildFilesTriggered(bool checked)
 	}
 }
 
-void CheckSum::slot_ActionOpenFileLocationTriggered(bool checked)
+void CheckSum::slot_ActionOpenFileLocationTriggered(bool)
 {
 	QModelIndexList rowModelIndexList = ui.tableView_records->selectionModel()->selectedRows();
 	while(rowModelIndexList.count())
@@ -914,7 +914,7 @@ void CheckSum::slot_ActionOpenFileLocationTriggered(bool checked)
 	}
 }
 
-void CheckSum::slot_ActionOpenFileTriggered(bool checked)
+void CheckSum::slot_ActionOpenFileTriggered(bool)
 {
 	QModelIndexList rowModelIndexList = ui.tableView_records->selectionModel()->selectedRows();
 	while(rowModelIndexList.count())
@@ -933,7 +933,7 @@ void CheckSum::slot_ActionRefreshSelectedFilesTriggered(bool checked)
 	slot_RefreshSelectedRecordList(checked);
 }
 
-void CheckSum::slot_ActionCopyFilePathTriggered(bool checked)
+void CheckSum::slot_ActionCopyFilePathTriggered(bool)
 {
 	QModelIndexList rowModelIndexList = ui.tableView_records->selectionModel()->selectedRows();
 	QString paths;

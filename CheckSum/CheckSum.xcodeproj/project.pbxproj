@@ -42,7 +42,6 @@
 		43B4782C4BC1B10DF8B94ED1 /* qtharfbuzz in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 8FD9863393EA1FAEA8CA38E0 /* qtharfbuzz */; };
 		4D240C2C2F61131164AA8DA5 /* qcocoa in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = A188A587032BA2BED00BCC33 /* qcocoa */; };
 		4E9DEB077E2FBE2189AE665E /* Qt5AccessibilitySupport in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 605BC8B27D861793EC50B539 /* Qt5AccessibilitySupport */; };
-		5E613805A7DDFDE9161F1611 /* MoveWidget.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 038F31E11FD2F370BAE0ED78 /* MoveWidget.cpp */; settings = {ATTRIBUTES = (); }; };
 		60CAC28E6D51452A10719251 /* qtiff in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = ACB2738A160C7D531954ACF6 /* qtiff */; };
 		61EEC397DC8556BF8C4E36A7 /* ImageIO.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 3A8EF9C62A8D4790CBB89CEA /* ImageIO.framework */; };
 		626977B47417B27DC69E03CC /* moc_CalculateFileCheckThread.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = CBDC798BCE61A51EA792E6DA /* moc_CalculateFileCheckThread.cpp */; settings = {ATTRIBUTES = (); }; };
@@ -110,7 +109,6 @@
 
 /* Begin PBXFileReference section */
 		000EFAECBE9FECC83F243764 /* MoveLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MoveLabel.h; path = /Users/jie/My/Study/Qt/Projects/CheckSum/CheckSum/MoveLabel.h; sourceTree = "<absolute>"; };
-		038F31E11FD2F370BAE0ED78 /* MoveWidget.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MoveWidget.cpp; path = /Users/jie/My/Study/Qt/Projects/CheckSum/CheckSum/MoveWidget.cpp; sourceTree = "<absolute>"; };
 		06BE538FB6323E57C4AFADC6 /* checksum.qrc */ = {isa = PBXFileReference; lastKnownFileType = text; name = checksum.qrc; path = /Users/jie/My/Study/Qt/Projects/CheckSum/CheckSum/checksum.qrc; sourceTree = "<absolute>"; };
 		0AC71381D8AECAF2FA9523F6 /* qico */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qico; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/imageformats/libqico$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
 		0B4E925CB02E8565483139C1 /* singleapplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = singleapplication.h; path = /Users/jie/My/Study/Qt/Projects/CheckSum/CheckSum/singleapplication.h; sourceTree = "<absolute>"; };
@@ -121,7 +119,6 @@
 		1E3035B950537B3476CDA789 /* Qt5ThemeSupport */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = Qt5ThemeSupport; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/lib/libQt5ThemeSupport$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
 		1ED2DFC06BE668E05006F0BF /* Qt5FontDatabaseSupport */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = Qt5FontDatabaseSupport; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/lib/libQt5FontDatabaseSupport$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
 		205259EEEE2BADA5E64741E3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
-		27F57479DF4CC6DB3AC400FF /* MoveWidget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MoveWidget.h; path = /Users/jie/My/Study/Qt/Projects/CheckSum/CheckSum/MoveWidget.h; sourceTree = "<absolute>"; };
 		28D93D11FE4EC49FC25C362F /* qicns */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qicns; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/imageformats/libqicns$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
 		2B774D8E4178765CE52EAAF5 /* DiskArbitration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiskArbitration.framework; path = /System/Library/Frameworks/DiskArbitration.framework; sourceTree = "<absolute>"; };
 		2DF310E76F57E3E63671189C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = /Users/jie/My/Study/Qt/Projects/CheckSum/CheckSum/main.cpp; sourceTree = "<absolute>"; };
@@ -278,8 +275,6 @@
 				2DF310E76F57E3E63671189C /* main.cpp */,
 				DBADBA4A384BB1C121BF1C13 /* MoveLabel.cpp */,
 				000EFAECBE9FECC83F243764 /* MoveLabel.h */,
-				038F31E11FD2F370BAE0ED78 /* MoveWidget.cpp */,
-				27F57479DF4CC6DB3AC400FF /* MoveWidget.h */,
 				75FDED66D5E12A555223025D /* qrc_checksum.cpp */,
 				567E587911553A8F85769F4F /* QtWindowsAero.cpp */,
 				B5427869A4FEF997F6677AEB /* QtWindowsAero.h */,
@@ -488,7 +483,6 @@
 				6D802B99420E95FBFD7586EE /* checksum.cpp in Compile Sources */,
 				1357A03DB93FCE08BACDE3A7 /* main.cpp in Compile Sources */,
 				C127EDF8E11AA1E4DBF7E406 /* MoveLabel.cpp in Compile Sources */,
-				5E613805A7DDFDE9161F1611 /* MoveWidget.cpp in Compile Sources */,
 				CA2065F8E65BC001FEC83C5F /* QtWindowsAero.cpp in Compile Sources */,
 				0B30C86D4DEE3B6D01704815 /* singleapplication.cpp in Compile Sources */,
 				1F8275852D155105DBC21CA0 /* qrc_checksum.cpp in Compile Sources */,
