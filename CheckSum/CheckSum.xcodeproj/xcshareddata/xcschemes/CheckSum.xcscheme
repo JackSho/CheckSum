@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1020"
+   LastUpgradeVersion = "0610"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7E786CBBCEA6B6573E3A4D1E"
+               BlueprintIdentifier = "2CAE54D966DFBE92E45A8FC0"
                BuildableName = "CheckSum.app"
                BlueprintName = "CheckSum"
                ReferencedContainer = "container:CheckSum.xcodeproj">
@@ -40,6 +40,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      disableMainThreadChecker = "YES"
       shouldUseLaunchSchemeArgsEnv = "NO">
       <Testables>
       </Testables>
@@ -54,8 +55,8 @@
    </TestAction>
    <LaunchAction
       buildConfiguration = "Release"
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      selectedDebuggerIdentifier = ""
+      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
       disableMainThreadChecker = "YES"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
@@ -67,7 +68,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7E786CBBCEA6B6573E3A4D1E"
+            BlueprintIdentifier = "2CAE54D966DFBE92E45A8FC0"
             BuildableName = "CheckSum.app"
             BlueprintName = "CheckSum"
             ReferencedContainer = "container:CheckSum.xcodeproj">
@@ -93,7 +94,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7E786CBBCEA6B6573E3A4D1E"
+            BlueprintIdentifier = "2CAE54D966DFBE92E45A8FC0"
             BuildableName = "CheckSum.app"
             BlueprintName = "CheckSum"
             ReferencedContainer = "container:CheckSum.xcodeproj">
