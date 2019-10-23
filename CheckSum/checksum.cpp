@@ -36,19 +36,19 @@
 
 CheckSum::CheckSum(QString initFileList, QWidget *parent)
 	: QMainWindow(parent),
-	waitExit(false),
-	iSelectedIndex(-1),
-	press(false),
-	currentLower(false),
-	dirViewRightMenu(NULL),
-	actAddThisFile(NULL),
-	actAddChildFiles(NULL),
-	actAddAllChildFiles(NULL),
 	tableRecordsRightMenu(NULL),
+    dirViewRightMenu(NULL),
 	actOpenFileLocation(NULL),
 	actOpenFile(NULL),
 	actDeleteSelectedFiles(NULL),
-	actRefreshSelectedFiles(NULL)
+	actRefreshSelectedFiles(NULL),
+    actAddChildFiles(NULL),
+    actAddAllChildFiles(NULL),
+    actAddThisFile(NULL),
+    press(false),
+    currentLower(false),
+    iSelectedIndex(-1),
+    waitExit(false)
 {
     ui.setupUi(this);
 

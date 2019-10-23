@@ -5,7 +5,7 @@
 #include "CalculateFileCheckThread.h"
 
 CalculateFileCheckThread::CalculateFileCheckThread(QObject *parent)
-	: QThread(parent),taskExist(false),taskSuccess(false),taskValid(false),stopTask(false)
+	: QThread(parent),taskSuccess(false),taskExist(false),taskValid(false),stopTask(false)
 {
 	connect(this,SIGNAL(finished()),SLOT(slot_Finished()),Qt::QueuedConnection);//这两个信号在新线程里面发射
 	//connect(this,SIGNAL(started()),SLOT(slot_Started()),Qt::QueuedConnection);//这两个信号在新线程里面发射
