@@ -26,6 +26,7 @@
 
 #include <AppKit/NSWorkspace.h>
 #include <CoreServices/CoreServices.h>
+#include <Foundation/NSProcessInfo.h>
 
 #endif
 
@@ -394,20 +395,19 @@ void CheckSum::dropEvent(QDropEvent *event)
 	bool needConvertFileUrl = false;
 	
 #ifdef  Q_OS_MAC
-	SInt32 macVersionMajor;
-	SInt32 macVersionMinor;
-	if ((Gestalt(gestaltSystemVersionMajor, &macVersionMajor) == noErr) && (Gestalt(gestaltSystemVersionMinor, &macVersionMinor) == noErr))
-	{
+    NSOperatingSystemVersion macSystemVersion = [[NSProcessInfo processInfo] operatingSystemVersion];
+    NSInteger macVersionMajor = macSystemVersion.majorVersion;
+    NSInteger macVersionMinor = macSystemVersion.minorVersion;
 		
 #ifdef QT_DEBUG
-		qDebug() << QString("CheckSum::dropEvent enter. macVersionMajor = %1, macVersionMinor = %2").arg(macVersionMajor).arg(macVersionMinor);
+    qDebug() << QString("CheckSum::dropEvent enter. macVersionMajor = %1, macVersionMinor = %2").arg(macVersionMajor).arg(macVersionMinor);
 #endif
-		///System/Library/CoreServices/SystemVersion.plist  Could look here, but this is easier.
-		if (macVersionMajor >= 10 && macVersionMinor >= 10) // need at least v10.10.0 of Mac OS X
-		{
-			needConvertFileUrl = true;
-		}
-	}
+    // /System/Library/CoreServices/SystemVersion.plist  Could look here, but this is easier.
+    if (macVersionMajor >= 10 && macVersionMinor >= 10) // need at least v10.10.0 of Mac OS X
+    {
+        needConvertFileUrl = true;
+    }
+	
 #endif
 	
 	QList<QUrl> urls = event->mimeData()->urls();

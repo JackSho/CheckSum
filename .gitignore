@@ -6,3 +6,4 @@ moc_*.h
 Debug
 Release
 Index/DataStore
+Build/
