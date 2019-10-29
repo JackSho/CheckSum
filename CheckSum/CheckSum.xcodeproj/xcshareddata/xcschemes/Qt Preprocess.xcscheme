@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8C9F7C9647E9CFB845F727E8"
+               BlueprintIdentifier = "97FAA9D838DADED6991D9BC6"
                BuildableName = "Qt Preprocess"
                BlueprintName = "Qt Preprocess"
                ReferencedContainer = "container:CheckSum.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8C9F7C9647E9CFB845F727E8"
+            BlueprintIdentifier = "97FAA9D838DADED6991D9BC6"
             BuildableName = "Qt Preprocess"
             BlueprintName = "Qt Preprocess"
             ReferencedContainer = "container:CheckSum.xcodeproj">
@@ -63,7 +63,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8C9F7C9647E9CFB845F727E8"
+            BlueprintIdentifier = "97FAA9D838DADED6991D9BC6"
             BuildableName = "Qt Preprocess"
             BlueprintName = "Qt Preprocess"
             ReferencedContainer = "container:CheckSum.xcodeproj">

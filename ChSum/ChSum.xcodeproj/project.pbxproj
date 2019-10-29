@@ -11,8 +11,8 @@
 		18121E8420BA64680088D838 /* Calc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F9AD8A4714836D7152705AEA /* Calc.cpp */; };
 		18121E8820BA65D70088D838 /* libQt5Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18121E8720BA65D70088D838 /* libQt5Core.a */; };
 		18121E8A20BA66630088D838 /* libqtpcre2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18121E8920BA66630088D838 /* libqtpcre2.a */; };
-		18121E8C20BA66E20088D838 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 723F90793B2C195E2CCB2233 /* AppKit.framework */; };
-		18B162B623601979004C20E5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B162B523601979004C20E5 /* Security.framework */; };
+		18305DDD2367C2290074AE33 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B162B523601979004C20E5 /* Security.framework */; };
+		18305DDE2367C22E0074AE33 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 723F90793B2C195E2CCB2233 /* AppKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,56 +28,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0AC71381D8AECAF2FA9523F6 /* qico */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qico; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/imageformats/libqico$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
-		1402E731C643AE1B0067112A /* Qt5PrintSupport */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = Qt5PrintSupport; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/lib/libQt5PrintSupport$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
 		18121E7C20BA644B0088D838 /* ChSum */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ChSum; sourceTree = BUILT_PRODUCTS_DIR; };
 		18121E8720BA65D70088D838 /* libQt5Core.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libQt5Core.a; path = "../../../qt-everywhere-src-5.11.0/qtbase/lib/libQt5Core.a"; sourceTree = "<group>"; };
 		18121E8920BA66630088D838 /* libqtpcre2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libqtpcre2.a; path = "../../../qt-everywhere-src-5.11.0/qtbase/lib/libqtpcre2.a"; sourceTree = "<group>"; };
 		18B162B523601979004C20E5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = ../../../../../../../../System/Library/Frameworks/Security.framework; sourceTree = "<group>"; };
-		1E3035B950537B3476CDA789 /* Qt5ThemeSupport */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = Qt5ThemeSupport; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/lib/libQt5ThemeSupport$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
-		1ED2DFC06BE668E05006F0BF /* Qt5FontDatabaseSupport */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = Qt5FontDatabaseSupport; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/lib/libQt5FontDatabaseSupport$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
-		28D93D11FE4EC49FC25C362F /* qicns */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qicns; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/imageformats/libqicns$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
-		2B774D8E4178765CE52EAAF5 /* DiskArbitration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiskArbitration.framework; path = /System/Library/Frameworks/DiskArbitration.framework; sourceTree = "<absolute>"; };
-		3611B52F813C79359F307D97 /* qmacstyle */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qmacstyle; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/styles/libqmacstyle$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
-		3A8EF9C62A8D4790CBB89CEA /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = /System/Library/Frameworks/ImageIO.framework; sourceTree = "<absolute>"; };
-		4D765E1B1EA6C757220C63E7 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
 		55086D2A3888CD4C0DE49E54 /* chsum_plugin_import.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = chsum_plugin_import.cpp; path = /Users/jie/My/Study/Qt/Projects/CheckSum/ChSum/chsum_plugin_import.cpp; sourceTree = "<absolute>"; };
-		591E689A3455B0AD8224DBAC /* qgif */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qgif; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/imageformats/libqgif$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
-		605BC8B27D861793EC50B539 /* Qt5AccessibilitySupport */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = Qt5AccessibilitySupport; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/lib/libQt5AccessibilitySupport$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
 		6095B21C1BF66DADF00A5759 /* ChSum.pro */ = {isa = PBXFileReference; lastKnownFileType = text; name = ChSum.pro; path = /Users/jie/My/Study/Qt/Projects/CheckSum/ChSum/ChSum.pro; sourceTree = "<absolute>"; };
-		60B5768B8692DF9970C517BA /* qtlibpng */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qtlibpng; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/lib/libqtlibpng$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
 		68362BEC0982C3D4B0B13DE3 /* Calc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Calc.h; path = /Users/jie/My/Study/Qt/Projects/CheckSum/ChSum/Calc.h; sourceTree = "<absolute>"; };
-		68B1C75F08BC041326F35DC2 /* qmacjp2 */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qmacjp2; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/imageformats/libqmacjp2$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
-		6A36B5631C3894F20262E2FF /* qwbmp */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qwbmp; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/imageformats/libqwbmp$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
-		6AE3EC31EE5BB1FCEE84137C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = /System/Library/Frameworks/CoreGraphics.framework; sourceTree = "<absolute>"; };
-		7239ECDAEA862469791279BB /* Qt5ClipboardSupport */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = Qt5ClipboardSupport; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/lib/libQt5ClipboardSupport$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
 		723F90793B2C195E2CCB2233 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
-		7D7B02101166B76FD2D4F8B4 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = /System/Library/Frameworks/CoreText.framework; sourceTree = "<absolute>"; };
-		7EC00404ACD5AB0E97726B0E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
-		849600FB6F1A4E965EEE495C /* Qt5Core */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = Qt5Core; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/lib/libQt5Core$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
-		86B56BC273E2CB70DC4BAFD2 /* qjpeg */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qjpeg; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/imageformats/libqjpeg$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
-		8D9815BDB5BD9F90D2BC05C5 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
-		8FD9863393EA1FAEA8CA38E0 /* qtharfbuzz */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qtharfbuzz; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/lib/libqtharfbuzz$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
-		959BE535DDAB08389379149C /* qtga */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qtga; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/imageformats/libqtga$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
-		963E39EFB81A155198EE1A27 /* Qt5Widgets */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = Qt5Widgets; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/lib/libQt5Widgets$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
-		9742F24EE18EA44D52824F1E /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
 		9B622F71ABC5E21137A8FAC5 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = /Users/jie/My/Study/Qt/Projects/CheckSum/ChSum/main.cpp; sourceTree = "<absolute>"; };
-		9DFF62A901D70814B8A323D4 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
-		A188A587032BA2BED00BCC33 /* qcocoa */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qcocoa; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/platforms/libqcocoa$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
-		A1A67BEAA744704B29168D39 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
-		A9159446910A9645459CBC9A /* qtpcre2 */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qtpcre2; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/lib/libqtpcre2$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
-		A9FB619DFD714A032D3911D0 /* Qt5GraphicsSupport */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = Qt5GraphicsSupport; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/lib/libQt5GraphicsSupport$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
-		ACB2738A160C7D531954ACF6 /* qtiff */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qtiff; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/imageformats/libqtiff$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
-		CFD35AE5CA73FFCC4A689D42 /* qwebp */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qwebp; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/imageformats/libqwebp$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
-		D4B32C2222F82AC56BADEB21 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		DBCAE68485DBA908663429CA /* dummy.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = dummy.cpp; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/mkspecs/features/data/dummy.cpp"; sourceTree = "<absolute>"; };
-		DFD7912080BC557230093752 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
-		E6665516091D32A2C4BC0B26 /* Qt5Gui */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = Qt5Gui; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/lib/libQt5Gui$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
-		F001B3595C3475F52541559C /* qmacheif */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qmacheif; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/imageformats/libqmacheif$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
-		F03840B63BE8CC52ED0F3B95 /* qtfreetype */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qtfreetype; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/lib/libqtfreetype$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
-		F0D6D5925A90370C69166CA8 /* cocoaprintersupport */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = cocoaprintersupport; path = "/Users/jie/My/Study/Qt/qt-everywhere-src-5.11.0/qtbase/plugins/printsupport/libcocoaprintersupport$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
 		F9AD8A4714836D7152705AEA /* Calc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Calc.cpp; path = /Users/jie/My/Study/Qt/Projects/CheckSum/ChSum/Calc.cpp; sourceTree = "<absolute>"; };
-		FCC237CA5AD60B9BA4447615 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +46,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18121E8C20BA66E20088D838 /* AppKit.framework in Frameworks */,
-				18B162B623601979004C20E5 /* Security.framework in Frameworks */,
 				18121E8820BA65D70088D838 /* libQt5Core.a in Frameworks */,
+				18305DDE2367C22E0074AE33 /* AppKit.framework in Frameworks */,
+				18305DDD2367C2290074AE33 /* Security.framework in Frameworks */,
 				18121E8A20BA66630088D838 /* libqtpcre2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,46 +88,7 @@
 				18B162B523601979004C20E5 /* Security.framework */,
 				18121E8720BA65D70088D838 /* libQt5Core.a */,
 				18121E8920BA66630088D838 /* libqtpcre2.a */,
-				A188A587032BA2BED00BCC33 /* qcocoa */,
 				723F90793B2C195E2CCB2233 /* AppKit.framework */,
-				9DFF62A901D70814B8A323D4 /* Carbon.framework */,
-				A1A67BEAA744704B29168D39 /* IOKit.framework */,
-				7EC00404ACD5AB0E97726B0E /* QuartzCore.framework */,
-				605BC8B27D861793EC50B539 /* Qt5AccessibilitySupport */,
-				2B774D8E4178765CE52EAAF5 /* DiskArbitration.framework */,
-				FCC237CA5AD60B9BA4447615 /* Foundation.framework */,
-				9742F24EE18EA44D52824F1E /* CoreServices.framework */,
-				DFD7912080BC557230093752 /* ApplicationServices.framework */,
-				4D765E1B1EA6C757220C63E7 /* CoreFoundation.framework */,
-				6AE3EC31EE5BB1FCEE84137C /* CoreGraphics.framework */,
-				D4B32C2222F82AC56BADEB21 /* OpenGL.framework */,
-				8D9815BDB5BD9F90D2BC05C5 /* AGL.framework */,
-				1E3035B950537B3476CDA789 /* Qt5ThemeSupport */,
-				1ED2DFC06BE668E05006F0BF /* Qt5FontDatabaseSupport */,
-				7D7B02101166B76FD2D4F8B4 /* CoreText.framework */,
-				F03840B63BE8CC52ED0F3B95 /* qtfreetype */,
-				A9FB619DFD714A032D3911D0 /* Qt5GraphicsSupport */,
-				7239ECDAEA862469791279BB /* Qt5ClipboardSupport */,
-				3A8EF9C62A8D4790CBB89CEA /* ImageIO.framework */,
-				591E689A3455B0AD8224DBAC /* qgif */,
-				28D93D11FE4EC49FC25C362F /* qicns */,
-				0AC71381D8AECAF2FA9523F6 /* qico */,
-				86B56BC273E2CB70DC4BAFD2 /* qjpeg */,
-				F001B3595C3475F52541559C /* qmacheif */,
-				68B1C75F08BC041326F35DC2 /* qmacjp2 */,
-				959BE535DDAB08389379149C /* qtga */,
-				ACB2738A160C7D531954ACF6 /* qtiff */,
-				6A36B5631C3894F20262E2FF /* qwbmp */,
-				CFD35AE5CA73FFCC4A689D42 /* qwebp */,
-				F0D6D5925A90370C69166CA8 /* cocoaprintersupport */,
-				1402E731C643AE1B0067112A /* Qt5PrintSupport */,
-				3611B52F813C79359F307D97 /* qmacstyle */,
-				963E39EFB81A155198EE1A27 /* Qt5Widgets */,
-				E6665516091D32A2C4BC0B26 /* Qt5Gui */,
-				60B5768B8692DF9970C517BA /* qtlibpng */,
-				8FD9863393EA1FAEA8CA38E0 /* qtharfbuzz */,
-				849600FB6F1A4E965EEE495C /* Qt5Core */,
-				A9159446910A9645459CBC9A /* qtpcre2 */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
